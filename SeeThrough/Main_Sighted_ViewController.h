@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AFnetworking/AFNetworking.h>
 @interface Main_Sighted_ViewController : UIViewController
 
 @end

@@ -16,6 +16,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *user = [defaults objectForKey:@"id"];
+    NSString *token = @"test";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"id":user,@"token": token};
+    
+    [manager GET:@"http://192.168.0.35:3000/token_updatae" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
