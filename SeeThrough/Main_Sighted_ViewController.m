@@ -20,14 +20,15 @@
     //deviceTokens에 저장된 디바이스토큰 땡겨오기
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user = [defaults objectForKey:@"id"];
+    NSString *token = [defaults objectForKey:@"token"];
+    
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSDictionary *parameters = @{@"id":user,@"token": mApp.deviceTokens};
-    NSLog(@"id: %@ , token:%@",user, mApp.deviceTokens);
+    NSDictionary *parameters = @{@"id":user,@"token": token};
+    NSLog(@"id: %@ , token:%@",user,token);
     
-    [manager GET:@"http://192.168.0.35:3000/token_updatae" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:server@"/token_update" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
