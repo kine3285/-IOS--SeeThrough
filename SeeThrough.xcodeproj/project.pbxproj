@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35134D51BCEF26586489A872 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A60F88A5D6ADE63A315790A /* libPods.a */; };
+		6B1D33531BB12D19006603CC /* Buddy_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D33521BB12D19006603CC /* Buddy_ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9DF86F1BA448A800A36F4C /* Main_Blind_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF86E1BA448A800A36F4C /* Main_Blind_ViewController.m */; };
 		EB9DF8721BA448B400A36F4C /* Main_Sighted_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF8711BA448B400A36F4C /* Main_Sighted_ViewController.m */; };
 		EB9DF8751BA45C5300A36F4C /* opentok_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF8741BA45C5300A36F4C /* opentok_ViewController.m */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		06DEF7392E2ADFBD2D3BB41D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6B1D33511BB12D19006603CC /* Buddy_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buddy_ViewController.h; sourceTree = "<group>"; };
+		6B1D33521BB12D19006603CC /* Buddy_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buddy_ViewController.m; sourceTree = "<group>"; };
 		9A60F88A5D6ADE63A315790A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDBB77EC37E397DC0C1D1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB9DF86D1BA448A800A36F4C /* Main_Blind_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_Blind_ViewController.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				EBBEBB291BA31F9A0026BE44 /* AppDelegate.h */,
 				EBBEBB2A1BA31F9A0026BE44 /* AppDelegate.m */,
 				EBBEBB2F1BA31F9A0026BE44 /* Main.storyboard */,
+				6B1D33511BB12D19006603CC /* Buddy_ViewController.h */,
+				6B1D33521BB12D19006603CC /* Buddy_ViewController.m */,
 				EBBEBB321BA31F9A0026BE44 /* Images.xcassets */,
 				EBBEBB341BA31F9A0026BE44 /* LaunchScreen.xib */,
 				EBBEBB251BA31F9A0026BE44 /* Supporting Files */,
@@ -321,6 +326,7 @@
 				EBBEBB281BA31F9A0026BE44 /* main.m in Sources */,
 				EB9DF8751BA45C5300A36F4C /* opentok_ViewController.m in Sources */,
 				EBBEBB501BA327310026BE44 /* Sign-In_ViewController.m in Sources */,
+				6B1D33531BB12D19006603CC /* Buddy_ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
