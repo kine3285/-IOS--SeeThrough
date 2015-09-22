@@ -7,6 +7,7 @@
 
 #import "Main_Sighted_ViewController.h"
 #import "Sign-In_ViewController.h"
+#import "AppDelegate.h"
 @interface Main_Sighted_ViewController ()
 
 @end
@@ -16,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //deviceTokens에 저장된 디바이스토큰 땡겨오기
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSDictionary *parameters = @{@"token": mApp.deviceTokens};
+    NSLog(@"token:%@", mApp.deviceTokens);
+
 }
 
 - (void)didReceiveMemoryWarning {
