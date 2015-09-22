@@ -14,7 +14,10 @@
 
 @implementation AppDelegate
 @synthesize deviceTokens;
+@synthesize Session;
+@synthesize Token;
 bool request=false;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
