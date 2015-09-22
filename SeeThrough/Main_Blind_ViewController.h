@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "STconstants.h"
 @interface Main_Blind_ViewController : UIViewController
 
 @end

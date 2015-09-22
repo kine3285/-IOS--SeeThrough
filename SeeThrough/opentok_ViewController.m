@@ -73,7 +73,7 @@ static NSString*  kToken ;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"id":user};
     
-    [manager GET:@"http://192.168.0.35:3000/help" parameters:parameters
+    [manager GET:server@"/help" parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
              self.post = (NSDictionary *)responseObject;

@@ -38,6 +38,7 @@
 		6B1D33521BB12D19006603CC /* Buddy_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buddy_ViewController.m; sourceTree = "<group>"; };
 		9A60F88A5D6ADE63A315790A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDBB77EC37E397DC0C1D1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EB31F4421BB123D3000A7F90 /* STconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STconstants.h; sourceTree = "<group>"; };
 		EB9DF86D1BA448A800A36F4C /* Main_Blind_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_Blind_ViewController.h; sourceTree = "<group>"; };
 		EB9DF86E1BA448A800A36F4C /* Main_Blind_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main_Blind_ViewController.m; sourceTree = "<group>"; };
 		EB9DF8701BA448B400A36F4C /* Main_Sighted_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main_Sighted_ViewController.h; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 				EB9DF8701BA448B400A36F4C /* Main_Sighted_ViewController.h */,
 				EBBEBB4E1BA327310026BE44 /* Sign-In_ViewController.h */,
 				EBBEBB511BA327440026BE44 /* Sign-Up_ViewController.h */,
+				EB31F4421BB123D3000A7F90 /* STconstants.h */,
 			);
 			name = Header;
 			sourceTree = "<group>";
@@ -235,6 +237,7 @@
 				TargetAttributes = {
 					EBBEBB211BA31F9A0026BE44 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 29JNMFA48D;
 					};
 					EBBEBB3A1BA31F9A0026BE44 = {
 						CreatedOnToolsVersion = 6.4;
@@ -458,10 +461,13 @@
 			baseConfigurationReference = 06DEF7392E2ADFBD2D3BB41D /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SeeThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-57.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -471,10 +477,13 @@
 			baseConfigurationReference = B0DDBB77EC37E397DC0C1D1F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SeeThrough/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-57.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

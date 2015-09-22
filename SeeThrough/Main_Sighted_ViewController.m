@@ -18,12 +18,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //deviceTokens에 저장된 디바이스토큰 땡겨오기
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *user = [defaults objectForKey:@"id"];
+    NSString *token = [defaults objectForKey:@"token"];
     
-    NSDictionary *parameters = @{@"token": mApp.deviceTokens};
-    NSLog(@"token:%@", mApp.deviceTokens);
-
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"id":user,@"token": token};
+    NSLog(@"id: %@ , token:%@",user,token);
+    
+    [manager GET:server@"/token_update" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

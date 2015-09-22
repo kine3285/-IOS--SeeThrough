@@ -39,7 +39,9 @@
     __block NSString* verify=NULL;
     __block NSString* role;
     
-    [manager GET:@"http://192.168.0.24:3000/sign-In" parameters:parameters
+
+    [manager GET:server@"/sign-In" parameters:parameters
+
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
              self.post = (NSDictionary *)responseObject;

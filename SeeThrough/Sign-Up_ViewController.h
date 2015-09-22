@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AFnetworking/AFNetworking.h>
+#import "STconstants.h"
 
 @interface Sign_Up_ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *id_text;

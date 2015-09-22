@@ -58,7 +58,7 @@
         
         NSDictionary *parameters = @{@"id": email,@"pwd": password,@"role":role};
         
-        [manager GET:@"http://192.168.0.35:3000/sign-Up" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager GET:server@"/sign-Up" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             self.post = (NSDictionary *)responseObject;
             
             verify=[NSString stringWithString:[_post objectForKey:@"verify"]];

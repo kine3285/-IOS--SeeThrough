@@ -62,9 +62,11 @@
                       stringByReplacingOccurrencesOfString: @"<" withString: @""]
                      stringByReplacingOccurrencesOfString: @">" withString: @""]
                     stringByReplacingOccurrencesOfString: @" " withString: @""];
-    NSLog(@"디바이스토큰은 deviceTokens로 저장되며 다음과 같다\n");
-    NSLog(@"Clear : %@", deviceTokens);
+    NSLog(@"[AppDelegate]deviceTokens : %@", deviceTokens);
     
+                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                 [defaults setObject:deviceTokens forKey:@"token"];
+                 [defaults synchronize];
     
 }
 

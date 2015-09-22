@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AFnetworking/AFNetworking.h>
+#import "STconstants.h"
 @interface opentok_ViewController : UIViewController
 
 @end
