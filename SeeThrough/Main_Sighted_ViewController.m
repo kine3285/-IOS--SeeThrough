@@ -33,7 +33,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,5 +59,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(IBAction)unwindToMainView:(UIStoryboardSegue*)unwindSegue
+{
+    
+    NSLog(@"unwind segue");
+    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //    [defaults removeObjectForKey:@"id"];
+    //    [defaults synchronize];
+    
+    
+}
 
 @end

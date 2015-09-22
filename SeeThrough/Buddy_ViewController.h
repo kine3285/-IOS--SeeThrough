@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AFnetworking/AFNetworking.h>
+#import "STconstants.h"
 @interface Buddy_ViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>{
     IBOutlet UITableView *tableView;
     

@@ -88,6 +88,9 @@
                                 <state key="normal" title="친구 관리">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OGA-1Y-h1o" kind="presentation" id="3S4-Gp-Btr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="도움 횟수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doE-jQ-UTb">
                                 <rect key="frame" x="268" y="193" width="64" height="21"/>
@@ -223,7 +226,7 @@
                                         <rect key="frame" x="0.0" y="22" width="393" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EmP-lX-CuC" id="c5Q-5c-j9Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -238,8 +241,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="친구목록 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-fK-YgW">
+                                <rect key="frame" x="268" y="42" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHs-Is-3YL">
+                                <rect key="frame" x="34" y="290" width="30" height="30"/>
+                                <state key="normal" title="뒤로"/>
+                                <connections>
+                                    <segue destination="mcQ-vd-qxb" kind="unwind" unwindAction="unwindToMainView:" id="lgg-rm-39H"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-0W-zUx">
-                                <rect key="frame" x="340" y="449" width="52" height="30"/>
+                                <rect key="frame" x="20" y="240" width="52" height="30"/>
                                 <state key="normal" title="추가하기">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -247,12 +263,6 @@
                                     <action selector="addBtn:" destination="OGA-1Y-h1o" eventType="touchUpInside" id="fsv-if-YTT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="친구목록 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-fK-YgW">
-                                <rect key="frame" x="268" y="42" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -262,6 +272,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RT3-lz-SCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mcQ-vd-qxb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="951" y="1223"/>
         </scene>
@@ -385,8 +396,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wez-9p-URL"/>
-        <segue reference="LXZ-G2-AnM"/>
-        <segue reference="FSm-vl-BHK"/>
+        <segue reference="YKp-eo-nX0"/>
+        <segue reference="xPm-La-XgC"/>
+        <segue reference="TNM-d5-QUd"/>
     </inferredMetricsTieBreakers>
 </document>

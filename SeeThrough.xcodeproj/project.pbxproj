@@ -101,6 +101,7 @@
 		EB7E908D1BA331630075B7E5 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				6B1D33511BB12D19006603CC /* Buddy_ViewController.h */,
 				EB9DF8731BA45C5300A36F4C /* opentok_ViewController.h */,
 				EB9DF86D1BA448A800A36F4C /* Main_Blind_ViewController.h */,
 				EB9DF8701BA448B400A36F4C /* Main_Sighted_ViewController.h */,
@@ -114,6 +115,7 @@
 		EB7E908E1BA331730075B7E5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6B1D33521BB12D19006603CC /* Buddy_ViewController.m */,
 				EBBEBB4F1BA327310026BE44 /* Sign-In_ViewController.m */,
 				EB9DF8741BA45C5300A36F4C /* opentok_ViewController.m */,
 				EBBEBB521BA327440026BE44 /* Sign-Up_ViewController.m */,
@@ -151,8 +153,6 @@
 				EBBEBB291BA31F9A0026BE44 /* AppDelegate.h */,
 				EBBEBB2A1BA31F9A0026BE44 /* AppDelegate.m */,
 				EBBEBB2F1BA31F9A0026BE44 /* Main.storyboard */,
-				6B1D33511BB12D19006603CC /* Buddy_ViewController.h */,
-				6B1D33521BB12D19006603CC /* Buddy_ViewController.m */,
 				EBBEBB321BA31F9A0026BE44 /* Images.xcassets */,
 				EBBEBB341BA31F9A0026BE44 /* LaunchScreen.xib */,
 				EBBEBB251BA31F9A0026BE44 /* Supporting Files */,
