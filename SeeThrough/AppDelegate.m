@@ -14,6 +14,7 @@
 
 @implementation AppDelegate
 @synthesize deviceTokens;
+bool request=false;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -84,17 +85,24 @@
 
 //푸쉬알림 눌렀을 때  ConnectView부르게 해야함
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userPushInfo {
-    NSString  *acme1 = [userPushInfo objectForKey:@"message"];
-    NSLog(@"userPushInfo : %@", userPushInfo);
-    NSLog(@"string : %@", acme1);
-    NSDictionary *acme = [userPushInfo valueForKey:@"message"];
-    NSLog(@"string1 : %@", acme);
+//    NSString  *acme1 = [userPushInfo objectForKey:@"message"];
+//    NSLog(@"userPushInfo : %@", userPushInfo);
+//    NSLog(@"string : %@", acme1);
+//    NSDictionary *acme = [userPushInfo valueForKey:@"message"];
+//    NSLog(@"string1 : %@", acme);
+
+    NSLog(@"didReceiveRemoteNotification");
+    
+    //push 요청수락
+    request=true;
+    NSLog(@"Is request? : %c", request);
     
 }
 
 //for auto login
 -(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"willFinishLaunchingWithOptions");
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *user = [defaults objectForKey:@"id"];
@@ -105,13 +113,23 @@
         NSLog(@"auto login success");
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
         UIViewController *rootViewController;
-        if([role isEqualToString:@"blind"])
+    
+        if(request)
+        {
+            //push 요청 수락시 연결 화면으로 이동
+        rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
+            
+        }
+        else if([role isEqualToString:@"blind"])
         {
             rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_blind"];
             
         }else{
             rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_sighted"];
         }
+        
+        //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
+        request=false;
         
         self.window.rootViewController = rootViewController;
         [self.window makeKeyAndVisible];

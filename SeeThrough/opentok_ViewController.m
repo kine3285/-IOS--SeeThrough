@@ -96,6 +96,15 @@ static NSString*  kToken ;
    }else{
        
        //receive sessionID & Token from push
+      
+       NSString *token,*sessionid;
+       
+       kToken=[NSString stringWithString:token];
+             kSessionId=[NSString stringWithString:sessionid];
+       
+    _session = [[OTSession alloc] initWithApiKey:kApiKey
+                                       sessionId:kSessionId
+                                        delegate:self];
        
     [self doConnect];
    }
