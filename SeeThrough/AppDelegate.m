@@ -13,11 +13,81 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize deviceTokens;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+#define iOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ? 1 : 0
+    //APNS
+    if (iOS8) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge
+                                                                                             |UIRemoteNotificationTypeSound
+                                                                                             |UIRemoteNotificationTypeAlert) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }else
+    {
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:myTypes];
+    }
+    
+    //실행시 뱃지 0개로 초기화
+    application.applicationIconBadgeNumber = 0;
     return YES;
+}
+
+#pragma mark APPLE APNS
+#ifdef __IPHONE_8_0
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    //register to receive notifications
+    [application registerForRemoteNotifications];
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler
+{
+    //handle the actions
+    if ([identifier isEqualToString:@"declineAction"]){
+    }
+    else if ([identifier isEqualToString:@"answerAction"]){
+    }
+}
+#endif
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"DevideToken (%@)", deviceToken);
+    
+    //디바이스토큰을 디비에 저장하기 위하여 데이터 타입에서 스트링으로 변환
+    //[[NSString alloc]initWithData:newDeviceToken encoding:NSUTF8StringEncoding];
+    deviceTokens = [[[[deviceToken description]
+                      stringByReplacingOccurrencesOfString: @"<" withString: @""]
+                     stringByReplacingOccurrencesOfString: @">" withString: @""]
+                    stringByReplacingOccurrencesOfString: @" " withString: @""];
+    NSLog(@"디바이스토큰은 deviceTokens로 저장되며 다음과 같다\n");
+    NSLog(@"Clear : %@", deviceTokens);
+    
+    
+}
+
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    // 取得エラーの原因がシミュレーターによるものだった場合なにもしない
+    if(error.code == 3010) {
+        NSLog(@"Fail Regist to APNS by Simulator.");
+        return;
+    }
+    
+    NSLog(@"Error : Fail Regist to APNS. (%@)", error);
+}
+
+//푸쉬알림 눌렀을 때  ConnectView부르게 해야함
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userPushInfo {
+    NSString  *acme1 = [userPushInfo objectForKey:@"message"];
+    NSLog(@"userPushInfo : %@", userPushInfo);
+    NSLog(@"string : %@", acme1);
+    NSDictionary *acme = [userPushInfo valueForKey:@"message"];
+    NSLog(@"string1 : %@", acme);
+    
 }
 
 //for auto login
@@ -35,10 +105,10 @@
         UIViewController *rootViewController;
         if([role isEqualToString:@"blind"])
         {
-        rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_blind"];
+            rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_blind"];
             
         }else{
-        rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_sighted"];
+            rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_sighted"];
         }
         
         self.window.rootViewController = rootViewController;
