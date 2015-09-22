@@ -11,9 +11,13 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     NSString* deviceTokens;
+    NSString* Session;
+    NSString* Token;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain) NSString *deviceTokens;
+@property (nonatomic, retain) NSString *Session;
+@property (nonatomic, retain) NSString *Token;
 //edit by minchang
 
 @end

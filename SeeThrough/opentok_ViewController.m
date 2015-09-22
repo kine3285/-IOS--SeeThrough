@@ -9,6 +9,7 @@
 #import "opentok_ViewController.h"
 #import <OpenTok/OpenTok.h>
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface opentok_ViewController ()
 <OTSessionDelegate,OTSubscriberKitDelegate,OTPublisherDelegate>
@@ -96,6 +97,10 @@ static NSString*  kToken ;
    }else{
        
        //receive sessionID & Token from push
+       
+       AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+       NSString* token = mApp.Token;
+       NSString* session = mApp.Session;
        
     [self doConnect];
    }
