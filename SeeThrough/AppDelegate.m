@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import <UIKit/UIKit.h>
 @interface AppDelegate ()
-
+@property NSDictionary *post;
 @end
 
 @implementation AppDelegate
@@ -17,6 +17,7 @@
 @synthesize Session;
 @synthesize Token;
 bool request=false;
+bool isConnected=false;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -77,7 +78,6 @@ bool request=false;
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    // 取得エラーの原因がシミュレーターによるものだった場合なにもしない
     if(error.code == 3010) {
         NSLog(@"Fail Regist to APNS by Simulator.");
         return;
@@ -88,17 +88,47 @@ bool request=false;
 
 //푸쉬알림 눌렀을 때  ConnectView부르게 해야함
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userPushInfo {
-//    NSString  *acme1 = [userPushInfo objectForKey:@"message"];
-//    NSLog(@"userPushInfo : %@", userPushInfo);
-//    NSLog(@"string : %@", acme1);
-//    NSDictionary *acme = [userPushInfo valueForKey:@"message"];
-//    NSLog(@"string1 : %@", acme);
 
     NSLog(@"didReceiveRemoteNotification");
+    
+    //push 데이터들 저장    blind_id , sessionid,token;
+    NSString *blind_id;
+    Session;
+    Token;
+    
     
     //push 요청수락
     request=true;
     NSLog(@"Is request? : %c", request);
+    
+   //연결여부 확인
+    
+    __block NSString *verify;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"id":blind_id};
+    
+    [manager GET:server@"/status" parameters:parameters
+     
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             
+             self.post = (NSDictionary *)responseObject;
+             
+             verify=[NSString stringWithString:[_post objectForKey:@"verify"]];
+             
+             if([verify isEqualToString:@"true"])
+             {
+                 //이미 연결된 요청
+                 isConnected=true;
+                 
+             }else{
+                 //연결 작업 시작
+                 isConnected=false;
+             }
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+         }];
+    
     
 }
 
@@ -117,7 +147,7 @@ bool request=false;
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
         UIViewController *rootViewController;
     
-        if(request)
+        if(request&&!isConnected)
         {
             //push 요청 수락시 연결 화면으로 이동
         rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
