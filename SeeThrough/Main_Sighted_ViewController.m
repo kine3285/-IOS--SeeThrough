@@ -7,6 +7,7 @@
 
 #import "Main_Sighted_ViewController.h"
 #import "Sign-In_ViewController.h"
+#import "AppDelegate.h"
 @interface Main_Sighted_ViewController ()
 
 @end
@@ -16,13 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //deviceTokens에 저장된 디바이스토큰 땡겨오기
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     NSString *user = [defaults objectForKey:@"id"];
-    NSString *token = @"test";
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSDictionary *parameters = @{@"id":user,@"token": token};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSDictionary *parameters = @{@"id":user,@"token": mApp.deviceTokens};
+    NSLog(@"id: %@ , token:%@",user, mApp.deviceTokens);
     
     [manager GET:@"http://192.168.0.35:3000/token_updatae" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
