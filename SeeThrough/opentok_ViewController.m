@@ -33,7 +33,7 @@ static   bool sighted =NO;
 static NSString* role  ;
 
 // Replace with your OpenTok API key
-static NSString* const kApiKey = @"45339322";
+static NSString* const kApiKey = @"45339312";
 
 // Replace with your generated session ID
  static NSString*  kSessionId ;
@@ -67,6 +67,8 @@ static NSString*  kToken ;
     
     role = [NSString stringWithString:[defaults objectForKey:@"role"]];
     
+    NSLog(@"ROLE %@",role);
+    
 //    role = [NSString stringWithString:@"sighted"];
     
    if([role isEqualToString:@"blind"])
@@ -97,7 +99,8 @@ static NSString*  kToken ;
    }else{
        
        //receive sessionID & Token from push
-      
+       sighted=true;
+       
        AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
        NSString* token = mApp.Token;
        NSString* sessionid = mApp.Session;
@@ -154,6 +157,7 @@ static NSString*  kToken ;
 - (void)doPublish
 {
     
+    //이름 변경 친구 , 지원자
     _publisher =
     [[OTPublisher alloc] initWithDelegate:self name:role];
     
@@ -206,7 +210,21 @@ static NSString*  kToken ;
         [self showAlert:[error localizedDescription]];
     }
     
+    //
+    
+    if(sighted)
+    {
+        //
     NSLog(@"name is (%@)", stream.name);
+        
+    }else{
+        
+    NSLog(@"name is (%@)", stream.name);
+        
+     //voice notice helper type 
+        
+    }
+    
 }
 
 /**

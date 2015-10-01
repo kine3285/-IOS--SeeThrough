@@ -92,18 +92,20 @@ bool isConnected=false;
     NSLog(@"didReceiveRemoteNotification");
     
     //push 데이터들 저장    blind_id , sessionid,token;
-    NSString *blind_id;
-    Session;
-    Token;
+    NSString *blind_id= [NSString stringWithString:[userPushInfo objectForKey:@"id"]];
+    Session=[NSString stringWithString:[userPushInfo objectForKey:@"sessionid"]];
+    Token=[NSString stringWithString:[userPushInfo objectForKey:@"token"]];
     
-    
+    NSLog(@"blind_id = %@\nsessionID=%@\ntoken=%@",blind_id,Session,Token);
     //push 요청수락
-    request=true;
-    NSLog(@"Is request? : %c", request);
+    
+    request=TRUE;
+    NSLog(@"Is request? : %d", request);
     
    //연결여부 확인
     
     __block NSString *verify;
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"id":blind_id};
     
@@ -114,6 +116,8 @@ bool isConnected=false;
              self.post = (NSDictionary *)responseObject;
              
              verify=[NSString stringWithString:[_post objectForKey:@"verify"]];
+             
+    NSLog(@"IsReply? : %@", verify);
              
              if([verify isEqualToString:@"true"])
              {
@@ -129,7 +133,25 @@ bool isConnected=false;
              NSLog(@"Error: %@", error);
          }];
     
+        NSLog(@"%d  ",request&&!isConnected);
     
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        UIViewController *rootViewController;
+    
+        if(request&&!isConnected)
+        {
+            //push 요청 수락시 연결 화면으로 이동
+        rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
+        //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
+        request=false;
+        
+        self.window.rootViewController = rootViewController;
+        [self.window makeKeyAndVisible];
+            
+        }else{
+        
+            //이미 연결된 연결 alert 후 메인 페이지 이동 
+        }
 }
 
 //for auto login
@@ -147,13 +169,7 @@ bool isConnected=false;
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
         UIViewController *rootViewController;
     
-        if(request&&!isConnected)
-        {
-            //push 요청 수락시 연결 화면으로 이동
-        rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
-            
-        }
-        else if([role isEqualToString:@"blind"])
+        if([role isEqualToString:@"blind"])
         {
             rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_blind"];
             
