@@ -63,7 +63,7 @@ NSString *user ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"opentok-viewDidLoad");
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     user = [defaults objectForKey:@"id"];
@@ -107,7 +107,8 @@ NSString *user ;
        AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
        NSString* token = mApp.Token;
        NSString* sessionid = mApp.Session;
-       
+       NSLog(@"Push로 넘겨받은 Token값은 %@ 입니다.", mApp.Token);
+       NSLog(@"Push로 넘겨받은 sessionID값은 %@ 입니다.", mApp.Session);
        kToken=[NSString stringWithString:token];
              kSessionId=[NSString stringWithString:sessionid];
        

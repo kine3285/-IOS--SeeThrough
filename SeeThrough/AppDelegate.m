@@ -90,16 +90,22 @@ bool isConnected=false;
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userPushInfo {
 
     NSLog(@"didReceiveRemoteNotification");
+  
+    
+    
+
     
     //push 데이터들 저장    blind_id , sessionid,token;
     NSString *blind_id= [NSString stringWithString:[userPushInfo objectForKey:@"id"]];
     Session=[NSString stringWithString:[userPushInfo objectForKey:@"sessionid"]];
     Token=[NSString stringWithString:[userPushInfo objectForKey:@"token"]];
+
     
     NSLog(@"blind_id = %@\nsessionID=%@\ntoken=%@",blind_id,Session,Token);
     //push 요청수락
     
     request=TRUE;
+
     NSLog(@"Is request? : %d", request);
     
    //연결여부 확인
