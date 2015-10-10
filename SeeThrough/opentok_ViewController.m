@@ -10,6 +10,7 @@
 #import <OpenTok/OpenTok.h>
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 
 @interface opentok_ViewController ()
 <OTSessionDelegate,OTSubscriberKitDelegate,OTPublisherDelegate>
@@ -42,6 +43,8 @@ static NSString* const kApiKey = @"45339312";
 
 static NSString*  kToken ;
 
+NSString *user ;
+
 - (IBAction)quit:(UITapGestureRecognizer*)recognizer {
     
     [self disconnect];
@@ -63,7 +66,7 @@ static NSString*  kToken ;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *user = [defaults objectForKey:@"id"];
+    user = [defaults objectForKey:@"id"];
     
     role = [NSString stringWithString:[defaults objectForKey:@"role"]];
     
@@ -114,7 +117,9 @@ static NSString*  kToken ;
        
        
     [self doConnect];
+       
    }
+    
     
 }
 
@@ -159,7 +164,7 @@ static NSString*  kToken ;
     
     //이름 변경 친구 , 지원자
     _publisher =
-    [[OTPublisher alloc] initWithDelegate:self name:role];
+    [[OTPublisher alloc] initWithDelegate:self name:user];
     
     _publisher.cameraPosition = AVCaptureDevicePositionBack;
     
@@ -202,28 +207,61 @@ static NSString*  kToken ;
     NSLog(@"구독 시작 ");
     
     
+   if([role isEqualToString:@"blind"])
+   {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"op_id":stream.name,@"id":user};
     
+    [manager GET:server@"/verify" parameters:parameters
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             
+             self.post = (NSDictionary *)responseObject;
+             
+             NSString *type =[NSString stringWithString:[_post objectForKey:@"type"]];
+             
+             NSString *helper_type;
+             
+             if([type isEqualToString:@"helper"])
+             {
+                 helper_type = @"도우미";
+             }else{
+                 helper_type = @"친구";
+             }
+             
     OTError *error = nil;
     [_session subscribe:_subscriber error:&error];
     if (error)
     {
         [self showAlert:[error localizedDescription]];
     }
+             
+    NSLog(@"name is : %@ ,type : %@", stream.name,helper_type);
     
-    //
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+             hud.labelText = [NSString stringWithFormat:@"%@ 와 연결되었습니다. 잠시만 기다려 주세요",helper_type];
+    hud.opacity=0.5;
+    [hud show:YES];
+    [hud hide:YES afterDelay:5];
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+         }];
+       
+       
+   }else{
+       
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+             hud.labelText = @"상대방과 연결되었습니다. 잠시만 기다려 주세요";
+    hud.opacity=0.5;
+    [hud show:YES];
+    [hud hide:YES afterDelay:5];
+             
+       
+   }
     
-    if(sighted)
-    {
-        //
-    NSLog(@"name is (%@)", stream.name);
-        
-    }else{
-        
-    NSLog(@"name is (%@)", stream.name);
-        
-     //voice notice helper type 
-        
-    }
+    
+     //voice notice helper type
+    
     
 }
 

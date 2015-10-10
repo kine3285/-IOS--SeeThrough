@@ -116,6 +116,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMT-z8-GMS">
                                 <rect key="frame" x="508" y="550" width="52" height="30"/>
+
                                 <state key="normal" title="로그아웃">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -334,7 +335,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-gq-dH5">
-                                <rect key="frame" x="532" y="550" width="52" height="30"/>
+                                <rect key="frame" x="100" y="371" width="52" height="30"/>
                                 <state key="normal" title="로그아웃">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -437,6 +438,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="xPm-La-XgC"/>
         <segue reference="YKp-eo-nX0"/>
+
         <segue reference="f0P-am-7S7"/>
         <segue reference="kFT-dl-QBd"/>
     </inferredMetricsTieBreakers>
