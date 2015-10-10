@@ -17,8 +17,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    mainArray = [[NSMutableArray alloc] initWithObjects: nil];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *user = [defaults objectForKey:@"id"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"id":user};
+    [manager GET:server@"/set_friend" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.post = (NSDictionary *)responseObject;
+        mainArray = [_post objectForKey:@"friends"];
+//(NSArray *)allKeysForObject:(id)anObject
+//        mainArray = [[NSMutableArray alloc] initWithObjects: [_post objectForKey:@"friends"], nil];
+        //친구여러명일때 배열에 어떻게 집어넣징..
+//        NSString * delname=[NSString stringWithString:[_post objectForKey:@"friends"]];
+        for(int i=0; i<[mainArray count]; i++)
+        {
+            NSLog(@"%d : %@\n",i,[mainArray objectAtIndex:i]);
+        }
+
+            [self->tableView reloadData];
+        
+    }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,14 +69,36 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 여기서 항목 삭제
-    NSString *delName = mainArray[[indexPath row]];
-    [mainArray removeObject:delName];
-    [self->tableView reloadData];
-    UIAlertView *alertView;
-    alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
-    [alertView setMessage:@"삭제하였습니다."];
-    [alertView show];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *user = [defaults objectForKey:@"id"];
+    NSString *friend = mainArray[[indexPath row]];
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"id":user,@"friend": friend};
+    [manager GET:server@"/del_friend" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.post = (NSDictionary *)responseObject;
+        NSString * delname=[NSString stringWithString:[_post objectForKey:@"friends"]];
+        NSLog(@"friends: %@", delname);
+        UIAlertView *alertView;
+        if(![delname isEqualToString:@"fail"])
+        {
+            
+            [mainArray removeObject:delname];
+            [self->tableView reloadData];
+            
+            
+            //AlertView
+            UIAlertView *alertView;
+            alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+            [alertView setMessage:@"삭제하였습니다."];
+            
+        }
+            [alertView show];
+    }
+         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);}];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,7 +127,7 @@
         NSLog(@"friends: %@", addname);
     UIAlertView *alertView;
         
-        if(![addname isEqualToString:@"fail"])
+        if(![addname isEqualToString:@"fail"] && ![addname isEqualToString:@"exist"])
         {
             
     [mainArray addObject:addname];
@@ -97,11 +142,16 @@
     alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
     [alertView setMessage:@"추가하였습니다."];
             
-        }else{
-    alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
-    [alertView setMessage:@"등록되지 않은 아이디 입니다."];
+        }else if([addname isEqualToString:@"fail"]){
+            alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+            [alertView setMessage:@"등록되지 않은 사용자 입니다."];
+            [alertView show];
+        } else if([addname isEqualToString:@"exist"]){
+            alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+            [alertView setMessage:@"이미 등록된 친구입니다."];
+            [alertView show];
         }
-    [alertView show];
+        
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
