@@ -10,7 +10,7 @@
 #import <OpenTok/OpenTok.h>
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "MBProgressHUD.h"
+//#import "MBProgressHUD.h"
 
 @interface opentok_ViewController ()
 <OTSessionDelegate,OTSubscriberKitDelegate,OTPublisherDelegate>
@@ -205,59 +205,64 @@ NSString *user ;
     _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
     
     NSLog(@"구독 시작 ");
-    
-    
-   if([role isEqualToString:@"blind"])
-   {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"op_id":stream.name,@"id":user};
-    
-    [manager GET:server@"/verify" parameters:parameters
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
-             self.post = (NSDictionary *)responseObject;
-             
-             NSString *type =[NSString stringWithString:[_post objectForKey:@"type"]];
-             
-             NSString *helper_type;
-             
-             if([type isEqualToString:@"helper"])
-             {
-                 helper_type = @"도우미";
-             }else{
-                 helper_type = @"친구";
-             }
-             
     OTError *error = nil;
-    [_session subscribe:_subscriber error:&error];
-    if (error)
-    {
-        [self showAlert:[error localizedDescription]];
-    }
-             
-    NSLog(@"name is : %@ ,type : %@", stream.name,helper_type);
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-             hud.labelText = [NSString stringWithFormat:@"%@ 와 연결되었습니다. 잠시만 기다려 주세요",helper_type];
-    hud.opacity=0.5;
-    [hud show:YES];
-    [hud hide:YES afterDelay:5];
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-         }];
-       
-       
-   }else{
-       
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-             hud.labelText = @"상대방과 연결되었습니다. 잠시만 기다려 주세요";
-    hud.opacity=0.5;
-    [hud show:YES];
-    [hud hide:YES afterDelay:5];
-             
-       
-   }
+        [_session subscribe:_subscriber error:&error];
+        if (error)
+        {
+            [self showAlert:[error localizedDescription]];
+        }
+//
+//   if([role isEqualToString:@"blind"])
+//   {
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    NSDictionary *parameters = @{@"op_id":stream.name,@"id":user};
+//    
+//    [manager GET:server@"/verify" parameters:parameters
+//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//             
+//             self.post = (NSDictionary *)responseObject;
+//             
+//             NSString *type =[NSString stringWithString:[_post objectForKey:@"type"]];
+//             
+//             NSString *helper_type;
+//             
+//             if([type isEqualToString:@"helper"])
+//             {
+//                 helper_type = @"도우미";
+//             }else{
+//                 helper_type = @"친구";
+//             }
+//             
+//    OTError *error = nil;
+//    [_session subscribe:_subscriber error:&error];
+//    if (error)
+//    {
+//        [self showAlert:[error localizedDescription]];
+//    }
+//             
+//    NSLog(@"name is : %@ ,type : %@", stream.name,helper_type);
+//    
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//             hud.labelText = [NSString stringWithFormat:@"%@ 와 연결되었습니다. 잠시만 기다려 주세요",helper_type];
+//    hud.opacity=0.5;
+//    [hud show:YES];
+//    [hud hide:YES afterDelay:5];
+//             
+//         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//             NSLog(@"Error: %@", error);
+//         }];
+//       
+//       
+//   }else{
+//       
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//             hud.labelText = @"상대방과 연결되었습니다. 잠시만 기다려 주세요";
+//    hud.opacity=0.5;
+//    [hud show:YES];
+//    [hud hide:YES afterDelay:5];
+//             
+//       
+//   }
     
     
      //voice notice helper type
@@ -413,8 +418,10 @@ didFailWithError:(OTError*)error
     }
     
     [self cleanupPublisher];
-    
+    if([role isEqualToString:@"blind"])
     [self performSegueWithIdentifier:@"rate" sender:self];
+    else
+        [self performSegueWithIdentifier:@"main_sighted" sender:self];
 }
 
 - (void)publisher:(OTPublisherKit*)publisher

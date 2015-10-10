@@ -28,6 +28,10 @@
         
         self.post = (NSDictionary *)responseObject;
         mainArray = [_post objectForKey:@"friends"];
+//(NSArray *)allKeysForObject:(id)anObject
+//        mainArray = [[NSMutableArray alloc] initWithObjects: [_post objectForKey:@"friends"], nil];
+        //친구여러명일때 배열에 어떻게 집어넣징..
+//        NSString * delname=[NSString stringWithString:[_post objectForKey:@"friends"]];
         for(int i=0; i<[mainArray count]; i++)
         {
             NSLog(@"%d : %@\n",i,[mainArray objectAtIndex:i]);
