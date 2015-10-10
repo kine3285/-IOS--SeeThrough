@@ -10,6 +10,8 @@
 		35134D51BCEF26586489A872 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A60F88A5D6ADE63A315790A /* libPods.a */; };
 		6B1D33531BB12D19006603CC /* Buddy_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D33521BB12D19006603CC /* Buddy_ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BD964251BBD35DE0038C63F /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD964241BBD35DE0038C63F /* RatingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6BFEFD511BC93912008E1327 /* Daum_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFEFD501BC93912008E1327 /* Daum_Regular.ttf */; settings = {ASSET_TAGS = (); }; };
+		6BFEFD531BC94B4D008E1327 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFEFD521BC94B4D008E1327 /* icon.png */; settings = {ASSET_TAGS = (); }; };
 		EB9DF86F1BA448A800A36F4C /* Main_Blind_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF86E1BA448A800A36F4C /* Main_Blind_ViewController.m */; };
 		EB9DF8721BA448B400A36F4C /* Main_Sighted_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF8711BA448B400A36F4C /* Main_Sighted_ViewController.m */; };
 		EB9DF8751BA45C5300A36F4C /* opentok_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF8741BA45C5300A36F4C /* opentok_ViewController.m */; };
@@ -39,6 +41,8 @@
 		6B1D33521BB12D19006603CC /* Buddy_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buddy_ViewController.m; sourceTree = "<group>"; };
 		6BD964231BBD35DE0038C63F /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
 		6BD964241BBD35DE0038C63F /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
+		6BFEFD501BC93912008E1327 /* Daum_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Daum_Regular.ttf; path = ../../Downloads/Daum_Font/Daum_Regular.ttf; sourceTree = "<group>"; };
+		6BFEFD521BC94B4D008E1327 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../Downloads/icon.png; sourceTree = "<group>"; };
 		9A60F88A5D6ADE63A315790A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DDBB77EC37E397DC0C1D1F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB31F4421BB123D3000A7F90 /* STconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STconstants.h; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 		EBBEBB251BA31F9A0026BE44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BFEFD521BC94B4D008E1327 /* icon.png */,
+				6BFEFD501BC93912008E1327 /* Daum_Regular.ttf */,
 				EBBEBB261BA31F9A0026BE44 /* Info.plist */,
 				EBBEBB271BA31F9A0026BE44 /* main.m */,
 			);
@@ -280,6 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFEFD511BC93912008E1327 /* Daum_Regular.ttf in Resources */,
+				6BFEFD531BC94B4D008E1327 /* icon.png in Resources */,
 				EBBEBB311BA31F9A0026BE44 /* Main.storyboard in Resources */,
 				EBBEBB361BA31F9A0026BE44 /* LaunchScreen.xib in Resources */,
 				EBBEBB331BA31F9A0026BE44 /* Images.xcassets in Resources */,
