@@ -204,22 +204,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="연결중입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-Id-lXw">
-                                <rect key="frame" x="216" y="195" width="168" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결중입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-Id-lXw">
+                                <rect key="frame" x="230" y="214" width="140.5" height="32.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="종료를 원하시면 두번 터치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I28-Ci-LWk">
-                                <rect key="frame" x="172" y="342" width="279" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="종료를 원하시면 두번 터치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I28-Ci-LWk">
+                                <rect key="frame" x="161.5" y="354" width="277.5" height="32.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="한번 터치는 카메라 전환" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo7-jF-WjM">
-                                <rect key="frame" x="172" y="269" width="256" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한번 터치는 카메라 전환" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo7-jF-WjM">
+                                <rect key="frame" x="173" y="284" width="254" height="32.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -229,6 +229,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="qoY-Id-lXw" firstAttribute="centerY" secondItem="5fC-ca-hwN" secondAttribute="centerY" constant="-70" id="0Aj-LC-xJ0"/>
+                            <constraint firstItem="I28-Ci-LWk" firstAttribute="centerY" secondItem="5fC-ca-hwN" secondAttribute="centerY" constant="70" id="40x-cx-b7l"/>
+                            <constraint firstItem="oo7-jF-WjM" firstAttribute="centerY" secondItem="5fC-ca-hwN" secondAttribute="centerY" id="HCe-nv-SMn"/>
+                            <constraint firstItem="I28-Ci-LWk" firstAttribute="centerX" secondItem="5fC-ca-hwN" secondAttribute="centerX" id="dxB-vJ-Jsf"/>
+                            <constraint firstItem="oo7-jF-WjM" firstAttribute="centerX" secondItem="5fC-ca-hwN" secondAttribute="centerX" id="fdb-Xh-uPP"/>
+                            <constraint firstItem="qoY-Id-lXw" firstAttribute="centerX" secondItem="5fC-ca-hwN" secondAttribute="centerX" id="xgY-jP-l5s"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gk9-w6-fDt" appends="YES" id="u44-lZ-wXd"/>
                             <outletCollection property="gestureRecognizers" destination="vbZ-y0-1dZ" appends="YES" id="XTL-Sk-dXJ"/>
@@ -343,15 +351,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="도움을 요청하시려면 화면을 2번 누르세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-9g-N7M">
-                                <rect key="frame" x="161" y="289" width="279" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움을 요청하시려면 화면을 2번 누르세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-9g-N7M">
+                                <rect key="frame" x="162" y="289" width="277.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-gq-dH5">
-                                <rect key="frame" x="100" y="371" width="52" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-gq-dH5">
+                                <rect key="frame" x="508" y="550" width="52" height="30"/>
                                 <animations/>
                                 <state key="normal" title="로그아웃">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -364,6 +372,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XcC-gq-dH5" secondAttribute="trailing" constant="20" id="3H0-0D-LVH"/>
+                            <constraint firstItem="SG3-9g-N7M" firstAttribute="centerY" secondItem="A50-aI-sZE" secondAttribute="centerY" id="NkG-dW-6Uw"/>
+                            <constraint firstItem="Lpe-8E-udZ" firstAttribute="top" secondItem="XcC-gq-dH5" secondAttribute="bottom" constant="20" id="b2h-kB-Gw4"/>
+                            <constraint firstItem="SG3-9g-N7M" firstAttribute="centerX" secondItem="A50-aI-sZE" secondAttribute="centerX" id="qoX-iJ-mep"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Hrd-pB-ERg" appends="YES" id="Hw4-4R-a8e"/>
                         </connections>
@@ -394,8 +408,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REX-Bh-uaH">
-                                <rect key="frame" x="277" y="442" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REX-Bh-uaH">
+                                <rect key="frame" x="350" y="435" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="취소">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -404,34 +418,47 @@
                                     <segue destination="bnl-10-IY7" kind="unwind" unwindAction="unwindToSignInView:" id="1dn-eS-QUj"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pxm-8z-ZjD">
-                                <rect key="frame" x="216" y="286" width="169" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pxm-8z-ZjD">
+                                <rect key="frame" x="225" y="315" width="150" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3mr-lR-6Cr"/>
+                                    <constraint firstAttribute="height" constant="30" id="Hfi-Ro-BPL"/>
+                                </constraints>
                                 <segments>
                                     <segment title="도우미"/>
                                     <segment title="시각장애인"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGt-35-uyk">
-                                <rect key="frame" x="252" y="115" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGt-35-uyk">
+                                <rect key="frame" x="225" y="135" width="150" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="JPO-gy-91n"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-HG-G1j">
-                                <rect key="frame" x="252" y="167" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-HG-G1j">
+                                <rect key="frame" x="225" y="185" width="150" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="uRM-H7-oJM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-9Y-TrF">
-                                <rect key="frame" x="252" y="216" width="98" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-9Y-TrF">
+                                <rect key="frame" x="225" y="235" width="150" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="c2b-xc-Ur3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-Th-JIh">
-                                <rect key="frame" x="277" y="368" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-Th-JIh">
+                                <rect key="frame" x="220" y="435" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="가입">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -443,6 +470,20 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cqP-Th-JIh" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="150" id="4Sc-ar-bc2"/>
+                            <constraint firstItem="oNs-9Y-TrF" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="8fm-Q3-fef"/>
+                            <constraint firstItem="w9a-HG-G1j" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="-100" id="92E-OJ-Vem"/>
+                            <constraint firstItem="cqP-Th-JIh" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" constant="-65" id="GbF-vs-npI"/>
+                            <constraint firstItem="YGt-35-uyk" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="-150" id="OOK-VL-pQV"/>
+                            <constraint firstItem="REX-Bh-uaH" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="150" id="UVb-jn-EFu"/>
+                            <constraint firstItem="w9a-HG-G1j" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="XC5-hH-joc"/>
+                            <constraint firstItem="pxm-8z-ZjD" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="XEL-se-jXV"/>
+                            <constraint firstItem="oNs-9Y-TrF" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="-50" id="a1v-Du-Ce8"/>
+                            <constraint firstItem="pxm-8z-ZjD" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="30" id="eSo-Z0-gG3"/>
+                            <constraint firstItem="YGt-35-uyk" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="klv-yW-Xdv"/>
+                            <constraint firstItem="REX-Bh-uaH" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" constant="65" id="uiW-6M-pUc"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="id_text" destination="YGt-35-uyk" id="kgf-dJ-lu6"/>
@@ -461,8 +502,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kFT-dl-QBd"/>
+        <segue reference="LXZ-G2-AnM"/>
+        <segue reference="wez-9p-URL"/>
         <segue reference="oOJ-xy-6De"/>
-        <segue reference="xPm-La-XgC"/>
     </inferredMetricsTieBreakers>
 </document>
