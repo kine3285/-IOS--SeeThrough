@@ -5,6 +5,34 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Daum_Regular.ttf">
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+            <string>Daum_Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Sign-In_View-->
         <scene sceneID="tne-QT-ifu">
@@ -19,9 +47,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tJ-Fd-8RU">
-                                <rect key="frame" x="230" y="385" width="39" height="30"/>
+                                <rect key="frame" x="225" y="455" width="50" height="29"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Q0F-U9-TYO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="로그인">
+                                    <color key="titleColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -29,45 +62,75 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZW-no-6X1">
-                                <rect key="frame" x="345" y="385" width="30" height="30"/>
+                                <rect key="frame" x="319.5" y="455" width="60" height="29"/>
                                 <animations/>
-                                <state key="normal" title="가입">
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
+                                <state key="normal" title="회원가입">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="0AT-nw-qcx" kind="show" identifier="signup" id="onL-43-gmC"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM8-Pw-6KX">
-                                <rect key="frame" x="225" y="185" width="150" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM8-Pw-6KX">
+                                <rect key="frame" x="225" y="235" width="150" height="30"/>
                                 <animations/>
+                                <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="BSi-uj-wVb"/>
+                                    <constraint firstAttribute="height" constant="30" id="Bde-js-KxR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gN1-yg-oO5">
-                                <rect key="frame" x="225" y="255" width="150" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gN1-yg-oO5">
+                                <rect key="frame" x="225" y="315" width="150" height="30"/>
                                 <animations/>
+                                <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Jkw-YU-6qO"/>
+                                    <constraint firstAttribute="height" constant="30" id="c9f-qE-M1s"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시 스루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xC-gb-sIu">
+                                <rect key="frame" x="261" y="115" width="79" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YGW-ki-JzY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="24"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세 번째 눈이 되어줄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF9-uR-rcP">
+                                <rect key="frame" x="224" y="85" width="151" height="19.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gN1-yg-oO5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-30" id="1Mv-gf-bqF"/>
-                            <constraint firstItem="BZW-no-6X1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="Giy-Xl-0OU"/>
+                            <constraint firstItem="gN1-yg-oO5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="1Mv-gf-bqF"/>
+                            <constraint firstItem="AM8-Pw-6KX" firstAttribute="top" secondItem="4xC-gb-sIu" secondAttribute="bottom" constant="70" id="A6w-KW-0Ug"/>
+                            <constraint firstItem="4xC-gb-sIu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E2b-eK-cxB"/>
+                            <constraint firstItem="BZW-no-6X1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="Giy-Xl-0OU"/>
+                            <constraint firstItem="mF9-uR-rcP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NDv-QO-ueB"/>
                             <constraint firstItem="gN1-yg-oO5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bc8-m6-odp"/>
-                            <constraint firstItem="1tJ-Fd-8RU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="hVX-Aa-HaO"/>
+                            <constraint firstItem="1tJ-Fd-8RU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="170" id="hVX-Aa-HaO"/>
                             <constraint firstItem="AM8-Pw-6KX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="itc-OP-MNH"/>
                             <constraint firstItem="1tJ-Fd-8RU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="p6b-mz-8DG"/>
-                            <constraint firstItem="BZW-no-6X1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="rtM-DH-Mmt"/>
-                            <constraint firstItem="AM8-Pw-6KX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="tcx-8R-MWo"/>
+                            <constraint firstItem="BZW-no-6X1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="170" id="rtM-DH-Mmt"/>
+                            <constraint firstItem="AM8-Pw-6KX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="tcx-8R-MWo"/>
+                            <constraint firstItem="4xC-gb-sIu" firstAttribute="top" secondItem="mF9-uR-rcP" secondAttribute="bottom" constant="10" id="uXu-Ym-nfh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -96,36 +159,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfj-mX-OF0">
-                                <rect key="frame" x="272" y="345" width="56" height="30"/>
+                                <rect key="frame" x="263" y="344" width="73" height="32"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
                                 <state key="normal" title="친구 관리">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="OGA-1Y-h1o" kind="presentation" id="3S4-Gp-Btr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움 횟수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doE-jQ-UTb">
-                                <rect key="frame" x="268" y="190" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움을 준 횟수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doE-jQ-UTb">
+                                <rect key="frame" x="244" y="190" width="112" height="19.5"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI4-0S-NYJ">
-                                <rect key="frame" x="258" y="230" width="84" height="21"/>
+                                <rect key="frame" x="258" y="230" width="84" height="19.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="84" id="tAB-Zs-Nbl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMT-z8-GMS">
-                                <rect key="frame" x="508" y="550" width="52" height="30"/>
+                                <rect key="frame" x="500" y="551" width="60" height="29"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="로그아웃">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -134,7 +201,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vfj-mX-OF0" firstAttribute="centerX" secondItem="nIT-iE-ywS" secondAttribute="centerX" id="63o-ds-Mu7"/>
                             <constraint firstItem="gF9-1O-bz3" firstAttribute="top" secondItem="lMT-z8-GMS" secondAttribute="bottom" constant="20" id="6J8-0P-Lad"/>
@@ -166,17 +233,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="연결되었던 도우미에 만족하시나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASH-Rz-o7h">
-                                <rect key="frame" x="50" y="181" width="500" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결되었던 도우미에 만족하시나요? 연결되었던 도우미를 블랙리스트에 추가하시려면 ~~~~~해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASH-Rz-o7h">
+                                <rect key="frame" x="114" y="271" width="372" height="58"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ASH-Rz-o7h" firstAttribute="centerX" secondItem="zmu-2l-eUn" secondAttribute="centerX" id="lTc-Zy-uAF"/>
+                            <constraint firstItem="ASH-Rz-o7h" firstAttribute="centerY" secondItem="zmu-2l-eUn" secondAttribute="centerY" id="xbf-KS-ZbK"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="I6D-zO-Ik3" appends="YES" id="3D8-UT-RdF"/>
                             <outletCollection property="gestureRecognizers" destination="pgs-PH-TWV" appends="YES" id="h5K-pR-EJG"/>
@@ -204,16 +275,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="연결중입니다 . 잠시만 기다려 주세요. 카메라 전환을 위해선 두번 터치를. 종료를 원하시면 세번을 터치하세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-EZ-S4K">
-                                <rect key="frame" x="157" y="184" width="248" height="144"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결중입니다... 두 번 터치는 카메라 전환, 연결 종료를 원하시면 세 번 터치해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-Id-lXw">
+                                <rect key="frame" x="138.5" y="271" width="324.5" height="58"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="qoY-Id-lXw" firstAttribute="centerY" secondItem="5fC-ca-hwN" secondAttribute="centerY" id="0Aj-LC-xJ0"/>
+                            <constraint firstItem="qoY-Id-lXw" firstAttribute="centerX" secondItem="5fC-ca-hwN" secondAttribute="centerX" id="xgY-jP-l5s"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="gk9-w6-fDt" appends="YES" id="u44-lZ-wXd"/>
                             <outletCollection property="gestureRecognizers" destination="vbZ-y0-1dZ" appends="YES" id="XTL-Sk-dXJ"/>
@@ -251,18 +327,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-jG-bEP">
-                                <rect key="frame" x="104" y="97" width="393" height="294"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-jG-bEP">
+                                <rect key="frame" x="150" y="150" width="300" height="400"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="FWd-9e-zFA"/>
+                                    <constraint firstAttribute="width" constant="300" id="yHp-UY-dFb"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="thisCell" id="EmP-lX-CuC">
-                                        <rect key="frame" x="0.0" y="22" width="393" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EmP-lX-CuC" id="c5Q-5c-j9Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -272,40 +354,72 @@
                                     <outlet property="delegate" destination="OGA-1Y-h1o" id="2VY-jS-U6c"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-JM-3LG">
-                                <rect key="frame" x="209" y="449" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-JM-3LG">
+                                <rect key="frame" x="150" y="95" width="150" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="19N-yl-Zzt"/>
+                                    <constraint firstAttribute="height" constant="30" id="a9v-Vq-kxK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="친구목록 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-fK-YgW">
-                                <rect key="frame" x="268" y="42" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구목록 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-fK-YgW">
+                                <rect key="frame" x="257" y="52" width="86" height="23"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="20"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHs-Is-3YL">
-                                <rect key="frame" x="34" y="290" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-0W-zUx">
+                                <rect key="frame" x="320" y="96" width="60" height="29"/>
                                 <animations/>
-                                <state key="normal" title="뒤로"/>
-                                <connections>
-                                    <segue destination="mcQ-vd-qxb" kind="unwind" unwindAction="unwindToMainView:" id="lgg-rm-39H"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-0W-zUx">
-                                <rect key="frame" x="20" y="240" width="52" height="30"/>
-                                <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="추가하기">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addBtn:" destination="OGA-1Y-h1o" eventType="touchUpInside" id="fsv-if-YTT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHs-Is-3YL">
+                                <rect key="frame" x="410" y="96" width="30" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
+                                <state key="normal" title="뒤로">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mcQ-vd-qxb" kind="unwind" unwindAction="unwindToMainView:" id="lgg-rm-39H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mpk-jG-bEP" firstAttribute="top" secondItem="PbA-0W-zUx" secondAttribute="bottom" constant="25" id="2V5-59-h5P"/>
+                            <constraint firstItem="AQC-JM-3LG" firstAttribute="centerX" secondItem="5cC-h5-ju3" secondAttribute="centerX" constant="-75" id="36N-eF-Icv"/>
+                            <constraint firstItem="pNq-fK-YgW" firstAttribute="centerX" secondItem="5cC-h5-ju3" secondAttribute="centerX" id="54y-Gi-Clk"/>
+                            <constraint firstItem="PbA-0W-zUx" firstAttribute="top" secondItem="mpk-jG-bEP" secondAttribute="bottom" constant="20" id="GT5-PU-KlS"/>
+                            <constraint firstItem="mpk-jG-bEP" firstAttribute="centerX" secondItem="5cC-h5-ju3" secondAttribute="centerX" id="QKL-uY-x7S"/>
+                            <constraint firstItem="pNq-fK-YgW" firstAttribute="top" secondItem="8Lc-1M-wP6" secondAttribute="bottom" constant="30" id="SPH-MG-A8O"/>
+                            <constraint firstItem="mpk-jG-bEP" firstAttribute="top" secondItem="ZHs-Is-3YL" secondAttribute="bottom" constant="25" id="Tg5-Cf-Inf"/>
+                            <constraint firstItem="ZHs-Is-3YL" firstAttribute="top" secondItem="mpk-jG-bEP" secondAttribute="bottom" constant="20" id="lQK-K1-hLL"/>
+                            <constraint firstItem="mpk-jG-bEP" firstAttribute="centerY" secondItem="5cC-h5-ju3" secondAttribute="centerY" constant="50" id="n0v-Eb-0zo"/>
+                            <constraint firstItem="ZHs-Is-3YL" firstAttribute="leading" secondItem="PbA-0W-zUx" secondAttribute="trailing" constant="30" id="nR5-fN-bix"/>
+                            <constraint firstItem="AQC-JM-3LG" firstAttribute="top" secondItem="mpk-jG-bEP" secondAttribute="bottom" constant="20" id="nhM-Ne-Gi7"/>
+                            <constraint firstItem="AQC-JM-3LG" firstAttribute="top" secondItem="pNq-fK-YgW" secondAttribute="bottom" constant="20" id="ntU-Y9-cxT"/>
+                            <constraint firstItem="mpk-jG-bEP" firstAttribute="top" secondItem="AQC-JM-3LG" secondAttribute="bottom" constant="25" id="rDE-lD-yIT"/>
+                            <constraint firstItem="PbA-0W-zUx" firstAttribute="centerX" secondItem="5cC-h5-ju3" secondAttribute="centerX" constant="50" id="xmS-vN-zaQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nhM-Ne-Gi7"/>
+                                <exclude reference="SPH-MG-A8O"/>
+                                <exclude reference="GT5-PU-KlS"/>
+                                <exclude reference="lQK-K1-hLL"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="mpk-jG-bEP" id="M6b-SK-NIs"/>
@@ -329,17 +443,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="도움을 요청하시려면 화면을 3번 누르세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-9g-N7M">
-                                <rect key="frame" x="162" y="289" width="278" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움을 요청하시려면 화면을 3번 터치하세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-9g-N7M">
+                                <rect key="frame" x="129.5" y="289.5" width="342.5" height="19.5"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-gq-dH5">
-                                <rect key="frame" x="508" y="550" width="52" height="30"/>
+                                <rect key="frame" x="500" y="551" width="60" height="29"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="로그아웃">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -348,7 +464,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XcC-gq-dH5" secondAttribute="trailing" constant="20" id="3H0-0D-LVH"/>
@@ -387,9 +503,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REX-Bh-uaH">
-                                <rect key="frame" x="350" y="435" width="30" height="30"/>
+                                <rect key="frame" x="350" y="435" width="30" height="29"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="취소">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -401,60 +519,76 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="3mr-lR-6Cr"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5qg-NH-yRu"/>
                                     <constraint firstAttribute="height" constant="30" id="Hfi-Ro-BPL"/>
                                 </constraints>
                                 <segments>
                                     <segment title="도우미"/>
                                     <segment title="시각장애인"/>
                                 </segments>
+                                <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGt-35-uyk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGt-35-uyk">
                                 <rect key="frame" x="225" y="135" width="150" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="JPO-gy-91n"/>
+                                    <constraint firstAttribute="height" constant="30" id="jjC-cl-tYf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-HG-G1j">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w9a-HG-G1j">
                                 <rect key="frame" x="225" y="185" width="150" height="30"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="U48-fb-A3e"/>
                                     <constraint firstAttribute="width" constant="150" id="uRM-H7-oJM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-9Y-TrF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="비밀번호 확인" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-9Y-TrF">
                                 <rect key="frame" x="225" y="235" width="150" height="30"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8cr-wj-Yrd"/>
                                     <constraint firstAttribute="width" constant="150" id="c2b-xc-Ur3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-Th-JIh">
-                                <rect key="frame" x="220" y="435" width="30" height="30"/>
+                                <rect key="frame" x="220" y="435.5" width="30" height="29"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="가입">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="sign_up:" destination="0AT-nw-qcx" eventType="touchUpInside" id="54i-vF-QMH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-lq-613">
+                                <rect key="frame" x="257" y="62" width="86" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="20"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cqP-Th-JIh" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="150" id="4Sc-ar-bc2"/>
                             <constraint firstItem="oNs-9Y-TrF" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="8fm-Q3-fef"/>
                             <constraint firstItem="w9a-HG-G1j" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="-100" id="92E-OJ-Vem"/>
                             <constraint firstItem="cqP-Th-JIh" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" constant="-65" id="GbF-vs-npI"/>
+                            <constraint firstItem="YGt-35-uyk" firstAttribute="top" secondItem="eu5-lq-613" secondAttribute="bottom" constant="50" id="HRG-xk-hhc"/>
                             <constraint firstItem="YGt-35-uyk" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="-150" id="OOK-VL-pQV"/>
                             <constraint firstItem="REX-Bh-uaH" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="150" id="UVb-jn-EFu"/>
+                            <constraint firstItem="eu5-lq-613" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="UqM-ge-vnz"/>
                             <constraint firstItem="w9a-HG-G1j" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="XC5-hH-joc"/>
                             <constraint firstItem="pxm-8z-ZjD" firstAttribute="centerX" secondItem="0fC-1d-bnq" secondAttribute="centerX" id="XEL-se-jXV"/>
                             <constraint firstItem="oNs-9Y-TrF" firstAttribute="centerY" secondItem="0fC-1d-bnq" secondAttribute="centerY" constant="-50" id="a1v-Du-Ce8"/>
@@ -481,7 +615,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LXZ-G2-AnM"/>
-        <segue reference="wez-9p-URL"/>
-        <segue reference="oOJ-xy-6De"/>
+        <segue reference="xPm-La-XgC"/>
+        <segue reference="FSm-vl-BHK"/>
     </inferredMetricsTieBreakers>
 </document>

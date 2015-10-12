@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user = [defaults objectForKey:@"id"];
     
@@ -57,6 +57,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
+    cell.textLabel.font = [UIFont fontWithName:@"다음_Regular" size:15];
     cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
     return cell;
 }
