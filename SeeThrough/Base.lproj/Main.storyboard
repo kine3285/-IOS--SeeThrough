@@ -233,8 +233,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결되었던 도우미에 만족하시나요? 연결되었던 도우미를 블랙리스트에 추가하시려면 ~~~~~해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASH-Rz-o7h">
-                                <rect key="frame" x="114" y="271" width="372" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도우미에 만족하시나요?  연결되었던 도우미를  블랙리스트에 추가하시려면  ~~~~~해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASH-Rz-o7h">
+                                <rect key="frame" x="195.5" y="233" width="209" height="134.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
                                 <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -275,8 +275,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결중입니다... 두 번 터치는 카메라 전환, 연결 종료를 원하시면 세 번 터치해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-Id-lXw">
-                                <rect key="frame" x="138.5" y="271" width="324.5" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결중입니다...  두 번 터치는 카메라 전환,  연결 종료를 원하시면  세 번 터치해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-Id-lXw">
+                                <rect key="frame" x="202" y="233" width="196" height="134.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
                                 <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -328,11 +328,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-jG-bEP">
-                                <rect key="frame" x="150" y="150" width="300" height="400"/>
+                                <rect key="frame" x="150" y="250" width="300" height="300"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="FWd-9e-zFA"/>
+                                    <constraint firstAttribute="height" constant="300" id="FWd-9e-zFA"/>
                                     <constraint firstAttribute="width" constant="300" id="yHp-UY-dFb"/>
                                 </constraints>
                                 <prototypes>
@@ -355,7 +355,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-JM-3LG">
-                                <rect key="frame" x="150" y="95" width="150" height="30"/>
+                                <rect key="frame" x="150" y="195" width="150" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="19N-yl-Zzt"/>
@@ -365,14 +365,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구목록 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNq-fK-YgW">
-                                <rect key="frame" x="257" y="52" width="86" height="23"/>
+                                <rect key="frame" x="257" y="92" width="86" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="20"/>
                                 <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbA-0W-zUx">
-                                <rect key="frame" x="320" y="96" width="60" height="29"/>
+                                <rect key="frame" x="320" y="196" width="60" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="추가하기">
@@ -383,7 +383,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHs-Is-3YL">
-                                <rect key="frame" x="410" y="96" width="30" height="29"/>
+                                <rect key="frame" x="410" y="196" width="30" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="뒤로">
@@ -405,10 +405,10 @@
                             <constraint firstItem="pNq-fK-YgW" firstAttribute="top" secondItem="8Lc-1M-wP6" secondAttribute="bottom" constant="30" id="SPH-MG-A8O"/>
                             <constraint firstItem="mpk-jG-bEP" firstAttribute="top" secondItem="ZHs-Is-3YL" secondAttribute="bottom" constant="25" id="Tg5-Cf-Inf"/>
                             <constraint firstItem="ZHs-Is-3YL" firstAttribute="top" secondItem="mpk-jG-bEP" secondAttribute="bottom" constant="20" id="lQK-K1-hLL"/>
-                            <constraint firstItem="mpk-jG-bEP" firstAttribute="centerY" secondItem="5cC-h5-ju3" secondAttribute="centerY" constant="50" id="n0v-Eb-0zo"/>
+                            <constraint firstItem="mpk-jG-bEP" firstAttribute="centerY" secondItem="5cC-h5-ju3" secondAttribute="centerY" constant="100" id="n0v-Eb-0zo"/>
                             <constraint firstItem="ZHs-Is-3YL" firstAttribute="leading" secondItem="PbA-0W-zUx" secondAttribute="trailing" constant="30" id="nR5-fN-bix"/>
                             <constraint firstItem="AQC-JM-3LG" firstAttribute="top" secondItem="mpk-jG-bEP" secondAttribute="bottom" constant="20" id="nhM-Ne-Gi7"/>
-                            <constraint firstItem="AQC-JM-3LG" firstAttribute="top" secondItem="pNq-fK-YgW" secondAttribute="bottom" constant="20" id="ntU-Y9-cxT"/>
+                            <constraint firstItem="AQC-JM-3LG" firstAttribute="top" secondItem="pNq-fK-YgW" secondAttribute="bottom" constant="80" id="ntU-Y9-cxT"/>
                             <constraint firstItem="mpk-jG-bEP" firstAttribute="top" secondItem="AQC-JM-3LG" secondAttribute="bottom" constant="25" id="rDE-lD-yIT"/>
                             <constraint firstItem="PbA-0W-zUx" firstAttribute="centerX" secondItem="5cC-h5-ju3" secondAttribute="centerX" constant="50" id="xmS-vN-zaQ"/>
                         </constraints>
@@ -443,8 +443,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움을 요청하시려면 화면을 3번 터치하세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-9g-N7M">
-                                <rect key="frame" x="129.5" y="289.5" width="342.5" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움을 요청하시려면  화면을 3번 터치하세요." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-9g-N7M">
+                                <rect key="frame" x="210" y="270.5" width="180" height="58"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
                                 <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -614,8 +614,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LXZ-G2-AnM"/>
-        <segue reference="xPm-La-XgC"/>
-        <segue reference="FSm-vl-BHK"/>
+        <segue reference="kFT-dl-QBd"/>
+        <segue reference="wez-9p-URL"/>
+        <segue reference="oOJ-xy-6De"/>
     </inferredMetricsTieBreakers>
 </document>
