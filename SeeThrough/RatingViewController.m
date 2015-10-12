@@ -14,7 +14,7 @@ UISwipeGestureRecognizer *swipeRightToLeftGesture;
 }
 @property NSDictionary *post;
 @end
-//;ㅏㅓ;ㅣㅏㅓ
+
 @implementation RatingViewController
 
 - (void)viewDidLoad {

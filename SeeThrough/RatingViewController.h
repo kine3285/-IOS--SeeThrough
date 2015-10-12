@@ -11,5 +11,5 @@
 #import "STconstants.h"
 @interface RatingViewController : UIViewController
 
-//ㅣㅏㅓㅚㅏㅓㅚㅏㅓ
+
 @end

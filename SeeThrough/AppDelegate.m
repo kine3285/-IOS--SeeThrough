@@ -127,37 +127,44 @@ bool isConnected=false;
              
              if([verify isEqualToString:@"true"])
              {
+            NSLog(@"이미 연결된 요청 ");
                  //이미 연결된 요청
                  isConnected=true;
                  
              }else{
                  //연결 작업 시작
+            NSLog(@"연결 시작 ");
                  isConnected=false;
              }
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
          }];
-    
-        NSLog(@"%d  ",request&&!isConnected);
-    
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
-        UIViewController *rootViewController;
+    UIViewController *rootViewController;
     
         if(request&&!isConnected)
         {
             //push 요청 수락시 연결 화면으로 이동
-        rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
-        //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
-        request=false;
-        
-        self.window.rootViewController = rootViewController;
-        [self.window makeKeyAndVisible];
-            
+            rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
+            //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
+            request=false;
+    
+            self.window.rootViewController = rootViewController;
+            [self.window makeKeyAndVisible];
+    
         }else{
-        
-            //이미 연결된 연결 alert 후 메인 페이지 이동 
+            rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_sighted"];
+            //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
+            request=false;
+    
+            self.window.rootViewController = rootViewController;
+    
+            [self.window makeKeyAndVisible];
+            
+            //이미 연결된 연결 alert 후 메인 페이지 이동
         }
+    
 }
 
 //for auto login
@@ -217,8 +224,9 @@ bool isConnected=false;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
+//    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+
     NSLog(@"applicationDidBecomeActive");
 }
 

@@ -10,11 +10,12 @@
 #import <OpenTok/OpenTok.h>
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-//#import "MBProgressHUD.h"
+#import "MBProgressHUD.h"
 
 @interface opentok_ViewController ()
 <OTSessionDelegate,OTSubscriberKitDelegate,OTPublisherDelegate>
 @property NSDictionary *post;
+@property (weak, nonatomic) IBOutlet UILabel *info_label;
 
 @end
 
@@ -34,12 +35,13 @@ static   bool sighted =NO;
 static NSString* role  ;
 
 // Replace with your OpenTok API key
-static NSString* const kApiKey = @"45339312";
+static NSString* const kApiKey = @"45372022";
 
 // Replace with your generated session ID
- static NSString*  kSessionId ;
+static NSString*  kSessionId ;
 // Replace with your generated token
 
+NSString*  from ;
 
 static NSString*  kToken ;
 
@@ -63,7 +65,7 @@ NSString *user ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"opentok-viewDidLoad");
-
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     user = [defaults objectForKey:@"id"];
@@ -72,54 +74,54 @@ NSString *user ;
     
     NSLog(@"ROLE %@",role);
     
-//    role = [NSString stringWithString:@"sighted"];
+    //    role = [NSString stringWithString:@"sighted"];
     
-   if([role isEqualToString:@"blind"])
-   {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"id":user};
-    
-    [manager GET:server@"/help" parameters:parameters
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
-             self.post = (NSDictionary *)responseObject;
-             
-             kToken=[NSString stringWithString:[_post objectForKey:@"token"]];
-             kSessionId=[NSString stringWithString:[_post objectForKey:@"session"]];
-             
-             NSLog(@"role:%@ \nkToken: %@\nkSessionID: %@",role,kToken,kSessionId);
-             
-    _session = [[OTSession alloc] initWithApiKey:kApiKey
-                                       sessionId:kSessionId
-                                        delegate:self];
-    
-    [self doConnect];
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-         }];
-    
-   }else{
-       
-       //receive sessionID & Token from push
-       sighted=true;
-       
-       AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-       NSString* token = mApp.Token;
-       NSString* sessionid = mApp.Session;
-       NSLog(@"Push로 넘겨받은 Token값은 %@ 입니다.", mApp.Token);
-       NSLog(@"Push로 넘겨받은 sessionID값은 %@ 입니다.", mApp.Session);
-       kToken=[NSString stringWithString:token];
-             kSessionId=[NSString stringWithString:sessionid];
-       
-    _session = [[OTSession alloc] initWithApiKey:kApiKey
-                                       sessionId:kSessionId
-                                        delegate:self];
-       
-       
-    [self doConnect];
-       
-   }
+    if([role isEqualToString:@"blind"])
+    {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        NSDictionary *parameters = @{@"id":user};
+        
+        [manager GET:server@"/help" parameters:parameters
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 
+                 self.post = (NSDictionary *)responseObject;
+                 
+                 kToken=[NSString stringWithString:[_post objectForKey:@"token"]];
+                 kSessionId=[NSString stringWithString:[_post objectForKey:@"session"]];
+                 
+                 //             NSLog(@"role:%@ \nkToken: %@\nkSessionID: %@",role,kToken,kSessionId);
+                 
+                 _session = [[OTSession alloc] initWithApiKey:kApiKey
+                                                    sessionId:kSessionId
+                                                     delegate:self];
+                 
+                 [self doConnect];
+                 
+             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                 NSLog(@"Error: %@", error);
+             }];
+        
+    }else{
+        
+        //receive sessionID & Token from push
+        sighted=true;
+        
+        AppDelegate *mApp = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSString* token = mApp.Token;
+        NSString* sessionid = mApp.Session;
+        //       NSLog(@"Push로 넘겨받은 Token값은 %@ 입니다.", mApp.Token);
+        //       NSLog(@"Push로 넘겨받은 sessionID값은 %@ 입니다.", mApp.Session);
+        kToken=[NSString stringWithString:token];
+        kSessionId=[NSString stringWithString:sessionid];
+        
+        _session = [[OTSession alloc] initWithApiKey:kApiKey
+                                           sessionId:kSessionId
+                                            delegate:self];
+        
+        
+        [self doConnect];
+        
+    }
     
     
 }
@@ -206,67 +208,16 @@ NSString *user ;
     _subscriber = [[OTSubscriber alloc] initWithStream:stream delegate:self];
     
     NSLog(@"구독 시작 ");
+    from = stream.name;
     OTError *error = nil;
-        [_session subscribe:_subscriber error:&error];
-        if (error)
-        {
-            [self showAlert:[error localizedDescription]];
-        }
-//
-//   if([role isEqualToString:@"blind"])
-//   {
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    NSDictionary *parameters = @{@"op_id":stream.name,@"id":user};
-//    
-//    [manager GET:server@"/verify" parameters:parameters
-//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//             
-//             self.post = (NSDictionary *)responseObject;
-//             
-//             NSString *type =[NSString stringWithString:[_post objectForKey:@"type"]];
-//             
-//             NSString *helper_type;
-//             
-//             if([type isEqualToString:@"helper"])
-//             {
-//                 helper_type = @"도우미";
-//             }else{
-//                 helper_type = @"친구";
-//             }
-//             
-//    OTError *error = nil;
-//    [_session subscribe:_subscriber error:&error];
-//    if (error)
-//    {
-//        [self showAlert:[error localizedDescription]];
-//    }
-//             
-//    NSLog(@"name is : %@ ,type : %@", stream.name,helper_type);
-//    
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//             hud.labelText = [NSString stringWithFormat:@"%@ 와 연결되었습니다. 잠시만 기다려 주세요",helper_type];
-//    hud.opacity=0.5;
-//    [hud show:YES];
-//    [hud hide:YES afterDelay:5];
-//             
-//         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//             NSLog(@"Error: %@", error);
-//         }];
-//       
-//       
-//   }else{
-//       
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//             hud.labelText = @"상대방과 연결되었습니다. 잠시만 기다려 주세요";
-//    hud.opacity=0.5;
-//    [hud show:YES];
-//    [hud hide:YES afterDelay:5];
-//             
-//       
-//   }
+    [_session subscribe:_subscriber error:&error];
+    if (error)
+    {
+        [self showAlert:[error localizedDescription]];
+    }
     
     
-     //voice notice helper type
+    //voice notice helper type
     
     
 }
@@ -282,6 +233,8 @@ NSString *user ;
     [_subscriber.view removeFromSuperview];
     _subscriber = nil;
 }
+
+
 
 -(void)disconnect
 {
@@ -374,6 +327,7 @@ didFailWithError:(OTError*)error
           subscriber.stream.connection.connectionId);
     assert(_subscriber == subscriber);
     
+    _info_label.text=@"";
     if(sighted)
     {
         [_subscriber.view setFrame:CGRectMake(0, 0,  [[UIScreen mainScreen] applicationFrame].size.width,
@@ -419,10 +373,12 @@ didFailWithError:(OTError*)error
     }
     
     [self cleanupPublisher];
+    
     if([role isEqualToString:@"blind"])
-    [self performSegueWithIdentifier:@"rate" sender:self];
+        [self performSegueWithIdentifier:@"rate" sender:self];
     else
         [self performSegueWithIdentifier:@"main_sighted" sender:self];
+    
 }
 
 - (void)publisher:(OTPublisherKit*)publisher
