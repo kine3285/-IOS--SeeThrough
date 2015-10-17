@@ -34,7 +34,7 @@ static   bool sighted =NO;
 static NSString* role  ;
 
 // Replace with your OpenTok API key
-static NSString* const kApiKey = @"45339312";
+static NSString* const kApiKey = @"45372022";
 
 // Replace with your generated session ID
  static NSString*  kSessionId ;

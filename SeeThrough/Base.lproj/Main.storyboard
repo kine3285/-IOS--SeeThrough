@@ -61,8 +61,8 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rTR-ZE-gJs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZW-no-6X1">
-                                <rect key="frame" x="319.5" y="455" width="60" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZW-no-6X1">
+                                <rect key="frame" x="319" y="455" width="60" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="15"/>
                                 <state key="normal" title="회원가입">
@@ -97,8 +97,8 @@
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시 스루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xC-gb-sIu">
-                                <rect key="frame" x="261" y="115" width="79" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시스루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xC-gb-sIu">
+                                <rect key="frame" x="264.5" y="115" width="72" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="YGW-ki-JzY"/>
@@ -613,8 +613,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kFT-dl-QBd"/>
+        <segue reference="YKp-eo-nX0"/>
         <segue reference="wez-9p-URL"/>
-        <segue reference="oOJ-xy-6De"/>
+        <segue reference="TNM-d5-QUd"/>
     </inferredMetricsTieBreakers>
 </document>
