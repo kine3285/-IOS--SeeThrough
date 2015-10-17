@@ -15,7 +15,29 @@
 @implementation Sign_In_ViewController
 
 - (void)viewDidLoad {
+//    UIVisualEffect *blurEffect;
+//    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    
+//    UIVisualEffectView *visualEffectView;
+//    visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//
+//    visualEffectView.frame = _signinView.bounds;
+//
+//    [_signinView addSubview:visualEffectView];
     [super viewDidLoad];
+//    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+//        self.view.backgroundColor = [UIColor clearColor];
+//        
+//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+//        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        blurEffectView.frame = self.view.bounds;
+//        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        
+//        [self.view addSubview:blurEffectView];
+//    }
+//    else {
+//        self.view.backgroundColor = [UIColor yellowColor];
+//    }
     NSLog(@"sign-in-viewDidLoad");
 }
 - (void)viewDidAppear:(BOOL)animated {

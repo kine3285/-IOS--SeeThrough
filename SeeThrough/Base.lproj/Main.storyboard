@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -117,7 +117,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gN1-yg-oO5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="30" id="1Mv-gf-bqF"/>
                             <constraint firstItem="AM8-Pw-6KX" firstAttribute="top" secondItem="4xC-gb-sIu" secondAttribute="bottom" constant="70" id="A6w-KW-0Ug"/>
@@ -136,6 +136,7 @@
                     <connections>
                         <outlet property="id_text" destination="AM8-Pw-6KX" id="SSH-bx-7aM"/>
                         <outlet property="password_text" destination="gN1-yg-oO5" id="9OX-pb-sgc"/>
+                        <outlet property="signinView" destination="8bC-Xf-vdC" id="1sA-wS-zkN"/>
                         <segue destination="p0N-ZC-gi3" kind="presentation" identifier="main_blind" id="TNM-d5-QUd"/>
                         <segue destination="jRA-Q8-AoO" kind="presentation" identifier="main_sighted" id="YKp-eo-nX0"/>
                         <segue destination="55t-ZG-rD0" kind="unwind" unwindAction="unwindToSignInView:" id="IXp-XY-JAX"/>
@@ -214,6 +215,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="helpCntLabel" destination="jI4-0S-NYJ" id="LO8-aC-PVf"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout_s" id="xPm-La-XgC"/>
                     </connections>
                 </viewController>
@@ -296,7 +298,6 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="info_label" destination="pIU-EZ-S4K" id="ezl-nW-dwa"/>
                         <segue destination="990-oy-EFz" kind="presentation" identifier="rate" id="gVl-6J-Id8"/>
                         <segue destination="jRA-Q8-AoO" kind="presentation" identifier="main_sighted" id="oOJ-xy-6De"/>
                     </connections>
@@ -327,17 +328,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-jG-bEP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mpk-jG-bEP">
                                 <rect key="frame" x="150" y="250" width="300" height="300"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="FWd-9e-zFA"/>
                                     <constraint firstAttribute="width" constant="300" id="yHp-UY-dFb"/>
                                 </constraints>
+                                <color key="separatorColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="thisCell" id="EmP-lX-CuC">
-                                        <rect key="frame" x="0.0" y="22" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EmP-lX-CuC" id="c5Q-5c-j9Y">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
@@ -349,6 +356,7 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="OGA-1Y-h1o" id="l45-vt-vCv"/>
                                     <outlet property="delegate" destination="OGA-1Y-h1o" id="2VY-jS-U6c"/>
@@ -614,8 +622,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YKp-eo-nX0"/>
-        <segue reference="wez-9p-URL"/>
         <segue reference="TNM-d5-QUd"/>
+        <segue reference="xPm-La-XgC"/>
+        <segue reference="YKp-eo-nX0"/>
     </inferredMetricsTieBreakers>
 </document>
