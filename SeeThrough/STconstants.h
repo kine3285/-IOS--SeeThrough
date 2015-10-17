@@ -9,6 +9,6 @@
 #ifndef STconstants_h
 #define STconstants_h
 
-#define server @"http://172.20.10.8:3000"
+#define server @"http://192.168.0.35:3000"
 
 #endif /* STconstants_h */
