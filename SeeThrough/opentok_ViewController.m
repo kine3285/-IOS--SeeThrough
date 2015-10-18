@@ -128,6 +128,7 @@ NSString *user ;
 
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"opentok-viewDidAppear");
+    
 }
 //- (void)viewDidDisappear:(BOOL)animated {
 //    NSLog(@"opentok-viewDidDisappear");
@@ -175,6 +176,8 @@ NSString *user ;
     if(sighted)
         _publisher.publishVideo=NO;
     
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification,@"상대방이 수락했습니다.조금만 기다려주세요." );
+    
     
     OTError *error = nil;
     [_session publish:_publisher error:&error];
@@ -183,7 +186,6 @@ NSString *user ;
     {
         [self showAlert:[error localizedDescription]];
     }
-    
     
 }
 
@@ -209,6 +211,11 @@ NSString *user ;
     
     NSLog(@"구독 시작 ");
     from = stream.name;
+    
+    //voice notice helper type
+    NSString *message = [NSString stringWithFormat:@"%@ 와 연결되었습니다 .",stream.name];
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification,message );
+    
     OTError *error = nil;
     [_session subscribe:_subscriber error:&error];
     if (error)
@@ -217,7 +224,6 @@ NSString *user ;
     }
     
     
-    //voice notice helper type
     
     
 }
@@ -327,7 +333,7 @@ didFailWithError:(OTError*)error
           subscriber.stream.connection.connectionId);
     assert(_subscriber == subscriber);
     
-    _info_label.text=@"";
+    [_info_label removeFromSuperview];
     if(sighted)
     {
         [_subscriber.view setFrame:CGRectMake(0, 0,  [[UIScreen mainScreen] applicationFrame].size.width,
@@ -338,6 +344,19 @@ didFailWithError:(OTError*)error
         [self.view addSubview:_publisher.view];
         [_publisher.view setFrame:CGRectMake(0, 0,  [[UIScreen mainScreen] applicationFrame].size.width,
                                              [[UIScreen mainScreen] applicationFrame].size.height)];
+    }
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+    if([role isEqualToString:@"sighted"])
+    {
+    NSString *info = @"도움요청에 응해주셔서 감사합니다. ";
+    [hud setLabelText:info];
+    hud.mode = MBProgressHUDModeText;
+    [hud setDimBackground:YES];
+    [hud setOpacity:0.5f];
+    [hud show:YES];
+    [hud hide:YES afterDelay:10.0];
+    [self.view addSubview:hud];
+        
     }
 }
 
@@ -400,4 +419,6 @@ didFailWithError:(OTError*)error
         [alert show];
     });
 }
+
+
 @end

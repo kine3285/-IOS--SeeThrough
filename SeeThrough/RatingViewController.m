@@ -7,41 +7,26 @@
 //
 
 #import "RatingViewController.h"
-
+#import "MBProgressHUD.h"
 @interface RatingViewController (){
 UISwipeGestureRecognizer *swipeLeftToRightGesture;
 UISwipeGestureRecognizer *swipeRightToLeftGesture;
 }
 @property NSDictionary *post;
+@property (weak, nonatomic) IBOutlet UILabel *message;
 @end
 
 @implementation RatingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    swipeLeftToRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget: self action: @selector(swipedScreenRight:)];
-    [swipeLeftToRightGesture setNumberOfTouchesRequired: 1];
-    [swipeLeftToRightGesture setDirection: UISwipeGestureRecognizerDirectionRight];
-    [[self view] addGestureRecognizer: swipeLeftToRightGesture];
-    
-    swipeRightToLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget: self action: @selector(swipedScreenLeft:)];
-    [swipeRightToLeftGesture setNumberOfTouchesRequired: 1];
-    [swipeRightToLeftGesture setDirection: UISwipeGestureRecognizerDirectionLeft];
-    [[self view] addGestureRecognizer: swipeRightToLeftGesture];
-    
-}
 
-- (void)swipedScreenRight:(UISwipeGestureRecognizer*)swipeGesture {
-    //왼쪽에서 오른쪽으로 스와이프할떄 이벤트
-    
-    
+
+}
+- (IBAction)goToMain:(id)sender {
     [self performSegueWithIdentifier:@"backMainBlindView" sender:self];
-    
-    // Move your image views as desired
 }
-
-- (void)swipedScreenLeft:(UISwipeGestureRecognizer*)swipeGesture1 {
+- (IBAction)setBlock:(id)sender {
     //오른쪽에서 왼쪽으로 스와이프할때 이벤트
     //블랙리스트추가
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -60,6 +45,8 @@ UISwipeGestureRecognizer *swipeRightToLeftGesture;
     
     [self performSegueWithIdentifier:@"backMainBlindView" sender:self];
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
