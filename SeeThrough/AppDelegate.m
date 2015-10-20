@@ -101,12 +101,12 @@ bool isConnected=false;
     Token=[NSString stringWithString:[userPushInfo objectForKey:@"token"]];
 
     
-    NSLog(@"blind_id = %@\nsessionID=%@\ntoken=%@",blind_id,Session,Token);
+//    NSLog(@"blind_id = %@\nsessionID=%@\ntoken=%@",blind_id,Session,Token);
     //push 요청수락
     
     request=TRUE;
 
-    NSLog(@"Is request? : %d", request);
+//    NSLog(@"Is request? : %d", request);
     
    //연결여부 확인
     
@@ -123,29 +123,26 @@ bool isConnected=false;
              
              verify=[NSString stringWithString:[_post objectForKey:@"verify"]];
              
-    NSLog(@"IsReply? : %@", verify);
+//    NSLog(@"IsReply? : %@", verify);
              
              if([verify isEqualToString:@"true"])
              {
-            NSLog(@"이미 연결된 요청 ");
                  //이미 연결된 요청
                  isConnected=true;
                  
              }else{
                  //연결 작업 시작
-            NSLog(@"연결 시작 ");
                  isConnected=false;
              }
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-         }];
         UIStoryboard *storyboard = self.window.rootViewController.storyboard;
     UIViewController *rootViewController;
+    
+    NSLog(@"request: %d, isConnected: %d",request,isConnected);
     
         if(request&&!isConnected)
         {
             //push 요청 수락시 연결 화면으로 이동
+            NSLog(@"연결 시작 ");
             rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"opentokView"];
             //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
             request=false;
@@ -157,6 +154,7 @@ bool isConnected=false;
             rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainView_sighted"];
             //요청 여부 초기화 (다음 어플 실행시 메인화면 이동)
             request=false;
+            NSLog(@"이미 연결된 요청 ");
     
             self.window.rootViewController = rootViewController;
     
@@ -164,6 +162,10 @@ bool isConnected=false;
             
             //이미 연결된 연결 alert 후 메인 페이지 이동
         }
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+         }];
     
 }
 
