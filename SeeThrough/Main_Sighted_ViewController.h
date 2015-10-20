@@ -10,5 +10,6 @@
 #import <AFnetworking/AFNetworking.h>
 #import "STconstants.h"
 @interface Main_Sighted_ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *helpCntLabel;
 
 @end

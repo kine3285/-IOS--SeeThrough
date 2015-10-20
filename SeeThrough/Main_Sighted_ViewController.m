@@ -9,7 +9,7 @@
 #import "Sign-In_ViewController.h"
 #import "AppDelegate.h"
 @interface Main_Sighted_ViewController ()
-
+@property NSDictionary *post;
 @end
 
 @implementation Main_Sighted_ViewController
@@ -29,7 +29,11 @@
     NSLog(@"id: %@ , token:%@",user,token);
     
     [manager GET:server@"/token_update" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    
+        self.post = (NSDictionary *)responseObject;
+        NSString *helpCnt = [_post objectForKey:@"helpcnt"];
+        NSLog(@"helpCount is %@", helpCnt);
+        [_helpCntLabel setText:[NSString stringWithFormat:@"%@",helpCnt]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -63,10 +67,25 @@
 {
     
     NSLog(@"unwind segue");
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *user = [defaults objectForKey:@"id"];
+    
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"id":user};
     //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //    [defaults removeObjectForKey:@"id"];
     //    [defaults synchronize];
-    
+    [manager GET:server@"/cnt_update" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.post = (NSDictionary *)responseObject;
+        NSString *helpCnt = [_post objectForKey:@"helpcnt"];
+        NSLog(@"helpCount is %@", helpCnt);
+        [_helpCntLabel setText:[NSString stringWithFormat:@"%@",helpCnt]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
     
 }
 

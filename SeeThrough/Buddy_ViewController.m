@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user = [defaults objectForKey:@"id"];
     
@@ -27,7 +28,10 @@
     [manager GET:server@"/set_friend" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.post = (NSDictionary *)responseObject;
-        mainArray = [_post objectForKey:@"friends"];
+        NSMutableArray *receiveArray = [_post objectForKey:@"friends"];
+        if(receiveArray == NULL){
+            NSLog(@"receiveArray is NULL");
+        } else mainArray = receiveArray;
 //(NSArray *)allKeysForObject:(id)anObject
 //        mainArray = [[NSMutableArray alloc] initWithObjects: [_post objectForKey:@"friends"], nil];
         //친구여러명일때 배열에 어떻게 집어넣징..
@@ -36,7 +40,7 @@
         {
             NSLog(@"%d : %@\n",i,[mainArray objectAtIndex:i]);
         }
-
+        
             [self->tableView reloadData];
         
     }
@@ -57,8 +61,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
-    cell.textLabel.font = [UIFont fontWithName:@"다음_Regular" size:15];
+    UIFont *myFont = [UIFont fontWithName:@"Daum" size:20];
+    cell.textLabel.font  = myFont;
     cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
@@ -80,13 +86,12 @@
     [manager GET:server@"/del_friend" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         self.post = (NSDictionary *)responseObject;
-        NSString * delname=[NSString stringWithString:[_post objectForKey:@"friends"]];
-        NSLog(@"friends: %@", delname);
-        UIAlertView *alertView;
-        if(![delname isEqualToString:@"fail"])
+
+        for(int i=0; i<[mainArray count]; i++)
         {
-            
-            [mainArray removeObject:delname];
+            NSLog(@"%d : %@\n",i,[mainArray objectAtIndex:i]);
+        }
+            mainArray = [_post objectForKey:@"friends"];
             [self->tableView reloadData];
             
             
@@ -95,7 +100,7 @@
             alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
             [alertView setMessage:@"삭제하였습니다."];
             
-        }
+
             [alertView show];
     }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -123,34 +128,42 @@
         
         self.post = (NSDictionary *)responseObject;
         
-        NSString * addname=[NSString stringWithString:[_post objectForKey:@"friends"]];
+        for(int i=0; i<[mainArray count]; i++)
+        {
+            NSLog(@"%d : %@\n",i,[mainArray objectAtIndex:i]);
+        }
         
-        NSLog(@"friends: %@", addname);
+        mainArray = [_post objectForKey:@"friends"];
+
+//        [self->tableView reloadData];
+        
+
     UIAlertView *alertView;
         
-        if(![addname isEqualToString:@"fail"] && ![addname isEqualToString:@"exist"])
-        {
-            
-    [mainArray addObject:addname];
-    //    [self->tableView reloadData]; 그냥 새로고침
-    //애니메이션 추가된 새로고침
-    [tableView beginUpdates];
-    [tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:YES];
-    [tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:YES];
-    [tableView endUpdates];
-    
-    //AlertView
-    alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
-    [alertView setMessage:@"추가하였습니다."];
-            
-        }else if([addname isEqualToString:@"fail"]){
-            alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
-            [alertView setMessage:@"등록되지 않은 사용자 입니다."];
-            [alertView show];
-        } else if([addname isEqualToString:@"exist"]){
+//이미 있으면 0  없는 아이디면 1
+        if([[mainArray objectAtIndex:0] isEqual:@"0"]){
             alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
             [alertView setMessage:@"이미 등록된 친구입니다."];
             [alertView show];
+        } else if([[mainArray objectAtIndex:0] isEqual:@"1"]){
+            alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+            [alertView setMessage:@"등록되지 않은 사용자 입니다."];
+            [alertView show];
+        } else
+        {
+
+
+            //    [self->tableView reloadData]; 그냥 새로고침
+            //애니메이션 추가된 새로고침
+            [tableView beginUpdates];
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:YES];
+            [tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:YES];
+            [tableView endUpdates];
+            
+            //AlertView
+            alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+            [alertView setMessage:@"추가하였습니다."];
+            
         }
         
         
@@ -158,6 +171,8 @@
         NSLog(@"Error: %@", error);
         
     }];
+    
+    textField.text = @"";
     
 }
 //여백터치시 키보드 숨김
