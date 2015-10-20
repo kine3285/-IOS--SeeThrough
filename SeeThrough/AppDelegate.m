@@ -159,6 +159,12 @@ bool isConnected=false;
             self.window.rootViewController = rootViewController;
     
             [self.window makeKeyAndVisible];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"알림"
+                                                        message:@"이미 연결된 요청입니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil] ;
+        [alert show];
             
             //이미 연결된 연결 alert 후 메인 페이지 이동
         }

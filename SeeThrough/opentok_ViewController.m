@@ -248,6 +248,11 @@ NSString *user ;
     [_session disconnect:&err];
     if(err){
         NSLog(@"disconnect failed with error: (%@)",err);
+    
+    if([role isEqualToString:@"blind"])
+        [self performSegueWithIdentifier:@"rate" sender:self];
+    else
+        [self performSegueWithIdentifier:@"main_sighted" sender:self];
     }
     
 }
