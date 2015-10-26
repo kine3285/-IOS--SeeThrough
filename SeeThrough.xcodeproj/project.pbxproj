@@ -21,6 +21,7 @@
 		6B8BDE6C1BDE2F970094CA93 /* friend2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8BDE6A1BDE2F970094CA93 /* friend2.png */; };
 		6B8BDE6E1BDE373C0094CA93 /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B8BDE6D1BDE373C0094CA93 /* white.jpg */; };
 		6B8BDE701BDE5F0D0094CA93 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8BDE6F1BDE5F0D0094CA93 /* icon.png */; };
+		6B8BDE721BDE6EBD0094CA93 /* friend3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8BDE711BDE6EBD0094CA93 /* friend3.png */; };
 		6BD75E471BDD43CE004FC5E8 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BD75E461BDD43CE004FC5E8 /* image.jpg */; };
 		6BD964251BBD35DE0038C63F /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD964241BBD35DE0038C63F /* RatingViewController.m */; };
 		EB9DF86F1BA448A800A36F4C /* Main_Blind_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DF86E1BA448A800A36F4C /* Main_Blind_ViewController.m */; };
@@ -62,6 +63,7 @@
 		6B8BDE6A1BDE2F970094CA93 /* friend2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friend2.png; sourceTree = SOURCE_ROOT; };
 		6B8BDE6D1BDE373C0094CA93 /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = SOURCE_ROOT; };
 		6B8BDE6F1BDE5F0D0094CA93 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
+		6B8BDE711BDE6EBD0094CA93 /* friend3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friend3.png; sourceTree = SOURCE_ROOT; };
 		6BD75E461BDD43CE004FC5E8 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = ../../Pictures/image.jpg; sourceTree = "<group>"; };
 		6BD964231BBD35DE0038C63F /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
 		6BD964241BBD35DE0038C63F /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		EBBEBB251BA31F9A0026BE44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B8BDE711BDE6EBD0094CA93 /* friend3.png */,
 				6B8BDE6F1BDE5F0D0094CA93 /* icon.png */,
 				6B8BDE6D1BDE373C0094CA93 /* white.jpg */,
 				6B8BDE691BDE2F970094CA93 /* friend1.png */,
@@ -332,6 +335,7 @@
 				EBBEBB331BA31F9A0026BE44 /* Images.xcassets in Resources */,
 				6B8BDE6C1BDE2F970094CA93 /* friend2.png in Resources */,
 				6B8BDE681BDE22170094CA93 /* search.png in Resources */,
+				6B8BDE721BDE6EBD0094CA93 /* friend3.png in Resources */,
 				6B8BDE661BDE21E40094CA93 /* sight.png in Resources */,
 				6B8BDE651BDE21E40094CA93 /* circle.png in Resources */,
 				6B8BDE5E1BDE1FCA0094CA93 /* logo1.png in Resources */,

@@ -244,14 +244,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfj-mX-OF0">
-                                <rect key="frame" x="520" y="30" width="50" height="50"/>
+                                <rect key="frame" x="520" y="30" width="50" height="40"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gL3-nm-CxU"/>
+                                    <constraint firstAttribute="height" constant="40" id="gL3-nm-CxU"/>
                                     <constraint firstAttribute="width" constant="50" id="hYW-DY-V7c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Daum_Regular" family="Daum" pointSize="17"/>
-                                <state key="normal" backgroundImage="friend1.png">
+                                <state key="normal" backgroundImage="friend3.png">
                                     <color key="titleColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -889,6 +889,7 @@
         <image name="blind.png" width="469" height="396"/>
         <image name="circle.png" width="403" height="414"/>
         <image name="friend1.png" width="108" height="120"/>
+        <image name="friend3.png" width="202" height="165"/>
         <image name="logo2.png" width="469" height="396"/>
         <image name="search.png" width="662" height="83"/>
         <image name="sight.png" width="469" height="396"/>
