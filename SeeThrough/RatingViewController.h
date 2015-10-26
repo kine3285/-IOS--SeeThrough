@@ -10,6 +10,8 @@
 #import <AFnetworking/AFNetworking.h>
 #import "STconstants.h"
 @interface RatingViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *leftbtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightbtn;
 
 
 @end

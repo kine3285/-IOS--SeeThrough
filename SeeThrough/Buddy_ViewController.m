@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user = [defaults objectForKey:@"id"];
     
@@ -32,10 +32,6 @@
         if(receiveArray == NULL){
             NSLog(@"receiveArray is NULL");
         } else mainArray = receiveArray;
-//(NSArray *)allKeysForObject:(id)anObject
-//        mainArray = [[NSMutableArray alloc] initWithObjects: [_post objectForKey:@"friends"], nil];
-        //친구여러명일때 배열에 어떻게 집어넣징..
-//        NSString * delname=[NSString stringWithString:[_post objectForKey:@"friends"]];
         for(int i=0; i<[mainArray count]; i++)
         {
             NSLog(@"%d : %@\n",i,[mainArray objectAtIndex:i]);
@@ -121,8 +117,6 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *parameters = @{@"id":user,@"friend": friend};
-
-//    NSLog(@"id: %@ , token:%@",user,token);
     
     [manager GET:server@"/add_friend" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -135,11 +129,7 @@
         
         mainArray = [_post objectForKey:@"friends"];
 
-//        [self->tableView reloadData];
-        
-
     UIAlertView *alertView;
-        
 //이미 있으면 0  없는 아이디면 1
         if([[mainArray objectAtIndex:0] isEqual:@"0"]){
             alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
@@ -151,9 +141,6 @@
             [alertView show];
         } else
         {
-
-
-            //    [self->tableView reloadData]; 그냥 새로고침
             //애니메이션 추가된 새로고침
             [tableView beginUpdates];
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:YES];
@@ -163,15 +150,10 @@
             //AlertView
             alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
             [alertView setMessage:@"추가하였습니다."];
-            
         }
-        
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
-        
     }];
-    
     textField.text = @"";
     
 }

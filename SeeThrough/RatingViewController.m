@@ -20,14 +20,12 @@ UISwipeGestureRecognizer *swipeRightToLeftGesture;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
 }
 - (IBAction)goToMain:(id)sender {
     [self performSegueWithIdentifier:@"backMainBlindView" sender:self];
 }
 - (IBAction)setBlock:(id)sender {
-    //오른쪽에서 왼쪽으로 스와이프할때 이벤트
     //블랙리스트추가
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *user = [defaults objectForKey:@"id"];

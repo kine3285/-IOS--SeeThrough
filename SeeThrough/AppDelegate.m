@@ -88,13 +88,7 @@ bool isConnected=false;
 
 //푸쉬알림 눌렀을 때  ConnectView부르게 해야함
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userPushInfo {
-
     NSLog(@"didReceiveRemoteNotification");
-  
-    
-    
-
-    
     //push 데이터들 저장    blind_id , sessionid,token;
     NSString *blind_id= [NSString stringWithString:[userPushInfo objectForKey:@"id"]];
     Session=[NSString stringWithString:[userPushInfo objectForKey:@"sessionid"]];

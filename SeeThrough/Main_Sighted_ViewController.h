@@ -11,5 +11,6 @@
 #import "STconstants.h"
 @interface Main_Sighted_ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *helpCntLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userid;
 
 @end

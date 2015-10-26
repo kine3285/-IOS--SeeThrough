@@ -13,7 +13,6 @@
 @interface Sign_Up_ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *id_text;
 @property (weak, nonatomic) IBOutlet UITextField *password_text;
-@property (weak, nonatomic) IBOutlet UITextField *password_re_text;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *role_segCntrl;
 @property (weak, nonatomic) IBOutlet UIButton *sign_up_btn;
 

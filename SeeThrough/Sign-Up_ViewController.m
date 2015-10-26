@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"sign-up-viewDidLoad");
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"sign-up-viewDidAppear");
@@ -36,7 +38,6 @@
     
     NSString* email = _id_text.text;
     NSString* password = _password_text.text;
-    NSString* pwd_verify = _password_re_text.text;
     NSString* title = (NSMutableString*)[_role_segCntrl titleForSegmentAtIndex:[_role_segCntrl selectedSegmentIndex]];
     
     NSString* role;
@@ -48,12 +49,7 @@
         
     
     __block NSString* verify;
-    if(![password isEqualToString:pwd_verify])
-    {
-        //alert password is not Equal to passwor_verify
-       NSLog(@" password is not Equal to passwor_verify");
-    }else{
-        
+
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         
         NSDictionary *parameters = @{@"id": email,@"pwd": password,@"role":role};
@@ -92,7 +88,6 @@
             NSLog(@"Error: %@", error);
         }];
         
-    }
             
     
 }
