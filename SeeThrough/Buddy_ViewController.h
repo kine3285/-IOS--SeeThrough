@@ -16,5 +16,7 @@
     NSMutableArray *mainArray;
 }
 - (IBAction)addBtn:(id)sender;
+-(IBAction)textFieldReturn:(id)sender;
+
 
 @end

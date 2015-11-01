@@ -57,6 +57,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"thisCell"];
+    
+//    UIImage *cellImage = [UIImage imageNamed:@"icon.png"];
+//    cell.imageView.image = cellImage;
+    
     UIFont *myFont = [UIFont fontWithName:@"Daum" size:20];
     cell.textLabel.font  = myFont;
     cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
@@ -161,6 +165,10 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+}
+//return키 누르면 키보드 숨김
+-(IBAction)textFieldReturn:(id)sender{
+    [sender resignFirstResponder];
 }
 
 /*

@@ -83,21 +83,25 @@
     
 }
 
--(IBAction)unwindToSignInView:(UIStoryboardSegue*)unwindSegue
-{
-    
-    NSLog(@"unwind segue");
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults removeObjectForKey:@"id"];
-//    [defaults synchronize];
-    
-    
-}
+//-(IBAction)unwindToSignInView:(UIStoryboardSegue*)unwindSegue
+//{
+//    
+//    NSLog(@"unwind segue");
+////    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+////    [defaults removeObjectForKey:@"id"];
+////    [defaults synchronize];
+//    
+//    
+//}
 
 //여백터치시 키보드 숨김
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+}
+//return키 누르면 키보드 숨김
+-(IBAction)textFieldReturn:(id)sender{
+    [sender resignFirstResponder];
 }
 
 

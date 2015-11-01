@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *id_text;
 @property (weak, nonatomic) IBOutlet UITextField *password_text;
 @property (weak, nonatomic) IBOutlet UIView *signinView;
-
+-(IBAction)textFieldReturn:(id)sender;
 
 @end
 

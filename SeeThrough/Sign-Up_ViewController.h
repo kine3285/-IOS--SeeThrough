@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *password_text;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *role_segCntrl;
 @property (weak, nonatomic) IBOutlet UIButton *sign_up_btn;
-
+-(IBAction)textFieldReturn:(id)sender;
 @end
