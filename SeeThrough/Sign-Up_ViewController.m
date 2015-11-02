@@ -47,6 +47,14 @@
     else
        role= @"blind";
         
+    if([_id_text.text isEqualToString:@""] || [_password_text.text isEqualToString:@""]){
+        NSLog(@"ID or Password is null!");
+        UIAlertView *alertView;
+        alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+        [alertView setMessage:@"이메일 주소 또는 비밀번호란을 채워주세요."];
+        [alertView show];
+    }else{
+    
     
     __block NSString* verify;
 
@@ -79,16 +87,23 @@
                    [self performSegueWithIdentifier:@"_main_blind" sender:self];
         
                
-           }else{
+           }
+            else{
                
                //alert ID is already exist
                  NSLog(@" ID is already exist");
+               UIAlertView *alertView;
+               alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+               [alertView setMessage:@"이미 등록된 이메일 주소입니다."];
+               
+               
+               [alertView show];
            }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
-        
-            
+    }
+    
     
 }
 

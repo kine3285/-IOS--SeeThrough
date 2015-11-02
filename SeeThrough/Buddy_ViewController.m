@@ -39,9 +39,34 @@
         
             [self->tableView reloadData];
         
+        NSString *receiveString = [_post objectForKey:@"id"];
+        NSString *strings = @"도움 요청을 기다려주세요";
+        NSLog(@"id is %@",receiveString);
+        if([receiveString isEqualToString:@"0"]){
+            [_lastfriendLabel setText:[NSString stringWithFormat:@"%@", strings]];
+        }else{
+            [_lastfriendLabel setText:[NSString stringWithFormat:@"%@",receiveString]];
+        }
+        
+        
+        
+        NSString *dateString = [_post objectForKey:@"date"];
+        NSLog(@"date is %@", dateString);
+        if([dateString isEqualToString:@"0"]){
+            _label2.hidden=YES;
+        }else{
+        NSArray *arrString= [dateString componentsSeparatedByString: @"T"];
+        NSString *string1 = [arrString objectAtIndex:0];
+        [_label2 setText:[NSString stringWithFormat:@"%@",string1]];
+        }
+        
     }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);}];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +86,7 @@
 //    UIImage *cellImage = [UIImage imageNamed:@"icon.png"];
 //    cell.imageView.image = cellImage;
     
-    UIFont *myFont = [UIFont fontWithName:@"Daum" size:20];
+    UIFont *myFont = [UIFont fontWithName:@"Helvetica Neue" size:17];
     cell.textLabel.font  = myFont;
     cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
     cell.backgroundColor = [UIColor clearColor];

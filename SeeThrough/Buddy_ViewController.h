@@ -17,6 +17,10 @@
 }
 - (IBAction)addBtn:(id)sender;
 -(IBAction)textFieldReturn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *img;
+@property (strong, nonatomic) IBOutlet UILabel *label1;
+@property (strong, nonatomic) IBOutlet UILabel *label2;
+@property (strong, nonatomic) IBOutlet UILabel *lastfriendLabel;
 
 
 @end

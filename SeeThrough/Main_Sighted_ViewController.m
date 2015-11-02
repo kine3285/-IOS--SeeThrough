@@ -8,6 +8,8 @@
 #import "Main_Sighted_ViewController.h"
 #import "Sign-In_ViewController.h"
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
+
 @interface Main_Sighted_ViewController ()
 @property NSDictionary *post;
 @end
@@ -16,6 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _crownImage.hidden=YES;
+    [self.imageButton.layer setCornerRadius:50];
+    [self.imageButton.layer setMasksToBounds:YES];
+    [self.imageButton.layer setBorderColor:[[UIColor whiteColor]CGColor]];
+    [self.imageButton.layer setBorderWidth:5];
+    
+    
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
     // Do any additional setup after loading the view.
@@ -36,9 +45,37 @@
         NSString *helpCnt = [_post objectForKey:@"helpcnt"];
         NSLog(@"helpCount is %@", helpCnt);
         [_helpCntLabel setText:[NSString stringWithFormat:@"%@",helpCnt]];
+        
+        
+        int cnt =[helpCnt intValue];
+        NSString *num1 = @"신입 도우미";
+        NSString *num2 = @"초보 도우미";
+        NSString *num3 = @"숙련된 도우미";
+        NSString *num4 = @"도움 전문가";
+        NSString *master = @"최고 레벨을\n달성하셨습니다!";
+        if(cnt < 10){
+            [_helperLevel setText:[NSString stringWithFormat:@"%@",num1]];
+            [_levelCntLabel setText:[NSString stringWithFormat:@"%d", 10-cnt]];
+        } else if(cnt>=10 && cnt<20){
+            [_helperLevel setText:[NSString stringWithFormat:@"%@",num2]];
+            [_levelCntLabel setText:[NSString stringWithFormat:@"%d", 20-cnt]];
+        } else if(cnt>=20 && cnt<40){
+            [_helperLevel setText:[NSString stringWithFormat:@"%@",num3]];
+            [_levelCntLabel setText:[NSString stringWithFormat:@"%d", 30-cnt]];
+        } else if(cnt>=40){
+            [_helperLevel setText:[NSString stringWithFormat:@"%@",num4]];
+            _levelCntLabel.hidden=YES;
+            [_lastlabel setText:[NSString stringWithFormat:@"%@",master]];
+
+            _crownImage.hidden=NO;
+            
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +126,47 @@
         NSLog(@"Error: %@", error);
     }];
     
+}
+
+- (IBAction)imageButtonClick:(id)sender {
+    UIActionSheet *myActionSheet;
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        myActionSheet = [[UIActionSheet alloc]initWithTitle:@"선택하세요" delegate:self cancelButtonTitle:@"취소" destructiveButtonTitle:@"사진찍기" otherButtonTitles:@"사진첩에서 고르기", nil];
+    }
+    else if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]&&[UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]){
+        myActionSheet = [[UIActionSheet alloc]initWithTitle:@"선택하세요" delegate:self cancelButtonTitle:@"취소" destructiveButtonTitle:nil otherButtonTitles:@"사진첩에서 고르기", nil];
+    }
+    UIView *keyView = [[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0];
+    [myActionSheet showInView:keyView];
+}
+
+#pragma mark - UIActionSheetDelegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex  == [actionSheet cancelButtonIndex]){
+        return;
+    }
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    [imagePickerController setDelegate:self];
+    
+    if(buttonIndex == [actionSheet destructiveButtonIndex]){
+        [imagePickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else if (buttonIndex == [actionSheet firstOtherButtonIndex]){
+        [imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    [imagePickerController setAllowsEditing:YES];
+    [self presentModalViewController:imagePickerController animated:YES];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(nonnull NSDictionary<NSString *,id> *)info{
+    UIImage *rectImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    [_imageButton setImage:rectImage forState:UIControlStateNormal];
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 @end

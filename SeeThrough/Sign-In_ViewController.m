@@ -72,6 +72,12 @@
              }else{
                  //alert login fail message
                  NSLog(@"alert login fail message");
+                 UIAlertView *alertView;
+                 alertView = [[UIAlertView alloc] initWithTitle:@"알림" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인",nil];
+                 [alertView setMessage:@"이메일 주소와 비밀번호를 확인하세요."];
+                 
+                 
+                 [alertView show];
              }
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

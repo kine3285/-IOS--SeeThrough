@@ -10,7 +10,7 @@
 
 #define STconstants_h
 
-#define server @"http://192.168.0.24:3000"
+#define server @"http://172.17.108.102:3000"
 //#define server @"http://localhost:3000"
 
 #endif /* STconstants_h */
