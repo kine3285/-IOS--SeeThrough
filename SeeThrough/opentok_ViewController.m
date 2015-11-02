@@ -65,7 +65,7 @@ NSString *user ;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"opentok-viewDidLoad");
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     user = [defaults objectForKey:@"id"];

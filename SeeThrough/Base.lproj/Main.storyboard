@@ -467,7 +467,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blind.png" translatesAutoresizingMaskIntoConstraints="NO" id="wkJ-K1-cEU">
-                                <rect key="frame" x="260" y="10" width="80" height="40"/>
+                                <rect key="frame" x="260" y="25" width="80" height="40"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="LOA-aD-Sfa"/>
@@ -499,7 +499,7 @@
                         <constraints>
                             <constraint firstItem="tZl-ov-RIR" firstAttribute="centerY" secondItem="zmu-2l-eUn" secondAttribute="centerY" constant="20" id="9ke-3N-X83"/>
                             <constraint firstItem="z9p-JO-PFJ" firstAttribute="centerY" secondItem="zmu-2l-eUn" secondAttribute="centerY" id="LyB-RN-iJV"/>
-                            <constraint firstItem="wkJ-K1-cEU" firstAttribute="top" secondItem="zmu-2l-eUn" secondAttribute="topMargin" constant="10" id="Z87-Yg-rhg"/>
+                            <constraint firstItem="wkJ-K1-cEU" firstAttribute="top" secondItem="zmu-2l-eUn" secondAttribute="topMargin" constant="25" id="Z87-Yg-rhg"/>
                             <constraint firstItem="UpJ-er-kK1" firstAttribute="centerY" secondItem="zmu-2l-eUn" secondAttribute="centerY" constant="20" id="c4p-bu-0bs"/>
                             <constraint firstItem="tZl-ov-RIR" firstAttribute="centerX" secondItem="zmu-2l-eUn" secondAttribute="centerX" constant="150" id="fq1-Lb-Xm3"/>
                             <constraint firstItem="z9p-JO-PFJ" firstAttribute="centerX" secondItem="zmu-2l-eUn" secondAttribute="centerX" id="ivK-P4-imA"/>
